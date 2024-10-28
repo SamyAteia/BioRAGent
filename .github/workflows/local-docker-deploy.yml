@@ -26,4 +26,4 @@ jobs:
 
     - name: Run Docker container
       run: |
-        docker run -d --name bioragent --restart unless-stopped -p 127.0.0.1:7865:7860 -e GEMIN_API_KEY=${{ secrets.GEMINI_API_KEY }} -e ELASTICSEARCH_HOST=${{ secrets.ELASTICSEARCH_HOST }} -e ELASTICSEARCH_PASSWORD=${{ secrets.ELASTICSEARCH_PASSWORD }} -e ELASTICSEARCH_USER=${{ secrets.ELASTICSEARCH_USER }} bioragent
+        docker run -d --name bioragent --restart unless-stopped -p 127.0.0.1:7865:7860 -e GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }} -e ELASTICSEARCH_HOST=${{ secrets.ELASTICSEARCH_HOST }} -e ELASTICSEARCH_PASSWORD=${{ secrets.ELASTICSEARCH_PASSWORD }} -e ELASTICSEARCH_USER=${{ secrets.ELASTICSEARCH_USER }} bioragent
