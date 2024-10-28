@@ -1,0 +1,29 @@
+name: Local Docker Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted  
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker container
+      run: |
+        docker build -t bioragent .
+
+    - name: Stop and remove existing Docker container if running
+      run: |
+        if [ "$(docker ps -aq -f name=bioragent)" ]; then
+          docker stop bioragent || true
+          docker rm bioragent || true
+        fi
+
+    - name: Run Docker container
+      run: |
+        docker run -d --name bioragent --restart unless-stopped -p 127.0.0.1:7865:7860 -e GEMIN_API_KEY=${{ secrets.GEMINI_API_KEY }} -e ELASTICSEARCH_HOST=${{ secrets.ELASTICSEARCH_HOST }} -e ELASTICSEARCH_PASSWORD=${{ secrets.ELASTICSEARCH_PASSWORD }} -e ELASTICSEARCH_USER=${{ secrets.ELASTICSEARCH_USER }} bioragent

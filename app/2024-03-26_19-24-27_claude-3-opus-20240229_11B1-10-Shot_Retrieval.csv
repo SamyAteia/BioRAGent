@@ -1,0 +1,1277 @@
+question_id,question_body,question_type,wiki_context,completion,query,improved_query,relevant_articles,filtered_articles,documents,snippets,precision,recall,f1_score
+6402c910201352f04a00000c,Can losartan reduce brain atrophy in Alzheimer's disease?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Can losartan reduce brain atrophy in Alzheimer's disease?"":
+
+##
+(losartan AND (""brain atrophy"" OR ""cerebral atrophy"" OR ""brain volume loss"" OR ""brain shrinkage"") AND (""alzheimer's disease"" OR ""alzheimer disease"" OR ""alzheimer's"" OR ""alzheimers"" OR AD)) AND (reduce OR reduces OR reduction OR decrease OR decreases OR prevent OR prevents OR prevention OR slow OR slows)
+##
+
+The key components are:
+1. Losartan: the main drug mentioned in the question
+2. Brain atrophy and its synonyms: ""cerebral atrophy"", ""brain volume loss"", ""brain shrinkage""
+3. Alzheimer's disease and its variants: ""alzheimer disease"", ""alzheimer's"", ""alzheimers"", AD
+4. Terms related to reduction: reduce, reduces, reduction, decrease, decreases, prevent, prevents, prevention, slow, slows
+
+The query requires all three main concepts (losartan, brain atrophy, Alzheimer's) to be present, while allowing for variations in terminology. It also includes terms related to the potential effect of reduction or slowing of atrophy.
+
+The query aims to balance precision by focusing on the key entities, while improving recall through the use of synonyms and related terms. The parentheses and AND operators help to enforce the required relationships between the concepts.","{'query': {'query_string': {'query': '(losartan AND (""brain atrophy"" OR ""cerebral atrophy"" OR ""brain volume loss"" OR ""brain shrinkage"") AND (""alzheimer\'s disease"" OR ""alzheimer disease"" OR ""alzheimer\'s"" OR ""alzheimers"" OR AD)) AND (reduce OR reduces OR reduction OR decrease OR decreases OR prevent OR prevents OR prevention OR slow OR slows)'}}, 'size': 50}",,"['34687634', '29226862']",[],[],[],0.5,1.0,0.6666666666666666
+640f857d201352f04a00002b,What is CHARMS with respect to medical review of predictive modeling?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What is CHARMS with respect to medical review of predictive modeling?"":
+
+##
+(""CHARMS"" OR ""CHecklist for critical Appraisal and data extraction for systematic Reviews of prediction Modelling Studies"") AND (""medical review"" OR ""critical appraisal"" OR ""systematic review"" OR ""evaluation"") AND (""predictive modeling"" OR ""prediction modeling"" OR ""prediction model"" OR ""predictive model"" OR ""risk prediction"")
+##
+
+The key components are:
+
+1. CHARMS: This is the main entity in the question. I included the full name ""CHecklist for critical Appraisal and data extraction for systematic Reviews of prediction Modelling Studies"" in case it is spelled out in some documents.
+
+2. Medical review, critical appraisal, systematic review, evaluation: These terms relate to the concept of reviewing or evaluating something in a medical context.
+
+3. Predictive modeling, prediction modeling, prediction model, predictive model, risk prediction: These are synonyms and related terms for the concept of predictive modeling.
+
+The query uses the AND operator to require all three main concepts - CHARMS, medical review, and predictive modeling. Within each concept, synonyms are connected with OR to capture variations in terminology.
+
+The query aims to find documents that specifically discuss what CHARMS is in the context of reviewing predictive models in medicine. It balances precision by focusing on the key concepts, while improving recall through the use of synonyms and related terms.","{'query': {'query_string': {'query': '(""CHARMS"" OR ""CHecklist for critical Appraisal and data extraction for systematic Reviews of prediction Modelling Studies"") AND (""medical review"" OR ""critical appraisal"" OR ""systematic review"" OR ""evaluation"") AND (""predictive modeling"" OR ""prediction modeling"" OR ""prediction model"" OR ""predictive model"" OR ""risk prediction"")'}}, 'size': 50}",,"['31762119', '34663532', '37084958', '38096619', '32684355', '33364802', '31093535', '35633976', '35642331', '29942125', '36805926', '36964445', '31402266', '33257987', '37536503', '36934895', '34011595', '35067242', '34413828', '33354672', '36381375', '31439598', '34886852', '36780568', '35321760', '34853112', '32978532', '32327446', '34528893', '37423201', '37770261', '35395724', '30663837', '36623780', '37085296', '31090660', '30017559', '37898606', '27768612', '35908226', '31441567', '31036306', '36877519', '32583899', '35398812', '35292503', '33077558', '34548347', '37590196', '37429690']",[],[],[],0.3,0.15789473684210525,0.20689655172413793
+6410eb95201352f04a00002e,Which splicing factors have been associated with alternative splicing in PLN R14del hearts?,list,,"Here is my attempt at an Elasticsearch query string for the question ""Which splicing factors have been associated with alternative splicing in PLN R14del hearts?"":
+
+##
+(""splicing factors"" OR ""spliceosome proteins"" OR ""splicing regulatory proteins"") AND 
+(""alternative splicing"" OR ""differential splicing"" OR ""aberrant splicing"") AND
+(""PLN R14del"" OR ""phospholamban R14del"" OR ""PLN Arg14del"" OR ""PLN-R14del"" OR ""phospholamban Arg14del mutation"") AND
+(heart OR hearts OR cardiac OR myocardial OR cardiomyocytes)
+##
+
+The key components are:
+1. Splicing factors and related terms like spliceosome proteins and splicing regulatory proteins
+2. Alternative splicing and synonyms like differential or aberrant splicing 
+3. The specific PLN R14del mutation, including various ways it may be written
+4. Terms related to the heart/cardiac tissue context
+
+The query aims to find documents that mention splicing factors in connection with alternative splicing events specifically in the context of hearts with the PLN R14del mutation. The synonyms and related terms help capture variations in terminology while still keeping the query focused on the key entities and concepts.
+
+The AND operators ensure all the main components are present, which is important for the precision of the results given the specificity of the question. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""splicing factors"" OR ""spliceosome proteins"" OR ""splicing regulatory proteins"") AND (""alternative splicing"" OR ""differential splicing"" OR ""aberrant splicing"") AND(""PLN R14del"" OR ""phospholamban R14del"" OR ""PLN Arg14del"" OR ""PLN-R14del"" OR ""phospholamban Arg14del mutation"") AND(heart OR hearts OR cardiac OR myocardial OR cardiomyocytes)'}}, 'size': 50}",,[],[],[],[],0.0,0.0,0.0
+64162fb0690f196b5100001a,What are the most common mutation types in Duchenne muscular Dystrophy?,list,,"Here is my attempt at an Elasticsearch query string for the question ""What are the most common mutation types in Duchenne muscular Dystrophy?"":
+
+##
+(""duchenne muscular dystrophy"" OR DMD) AND (""mutation types"" OR ""mutation patterns"" OR ""genetic mutations"" OR variants OR ""genetic variants"") AND (common OR ""most common"" OR frequent OR ""most frequent"" OR prevalent OR ""most prevalent"") AND (""dystrophin gene"" OR DMD)
+##
+
+The key components are:
+1. ""Duchenne muscular dystrophy"" and its abbreviation DMD
+2. Phrases related to types of mutations like ""mutation types"", ""mutation patterns"", ""genetic mutations"", variants
+3. Terms emphasizing commonality like common, ""most common"", frequent, prevalent 
+4. ""dystrophin gene"" and its symbol DMD, since mutations in this gene cause Duchenne muscular dystrophy
+
+The query aims to find documents that discuss the most common or frequent types of mutations in the dystrophin gene that lead to Duchenne muscular dystrophy. It includes synonyms and related terms to capture variations in phrasing while still maintaining a focus on the key concepts of DMD, mutation types, and commonality.
+
+The AND operators ensure all the main concepts are present, while the OR operators allow for flexibility in terminology. The query is relatively targeted, but the inclusion of related terms should help improve recall without sacrificing too much precision.","{'query': {'query_string': {'query': '(""duchenne muscular dystrophy"" OR DMD) AND (""mutation types"" OR ""mutation patterns"" OR ""genetic mutations"" OR variants OR ""genetic variants"") AND (common OR ""most common"" OR frequent OR ""most frequent"" OR prevalent OR ""most prevalent"") AND (""dystrophin gene"" OR DMD)'}}, 'size': 50}",,"['35064276', '29578119', '23620649', '32436198', '36845278', '33540285', '17141273', '33741226', '29973226', '36152336', '32358784', '37289342', '31139960', '35218518', '18957722', '28116794', '22650324', '37766830', '34629887', '35501714', '28332368', '34628793', '30938079', '31379145', '37861890', '30225627', '33777091', '36721834', '33599058', '17314512', '30254196', '32543101', '33843695', '11426463', '31381525', '35289675', '27745838', '16716778', '26284620', '32686699', '37254189', '15643612', '32791185', '30014611', '9524268', '31412794', '24225992', '33610829', '12622396', '36419457']",[],[],[],0.3,0.5,0.37499999999999994
+63eef3ebf36125a42600000a,What is the target of Litifilimab?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What is the target of Litifilimab?"":
+
+##
+(Litifilimab OR BIIB059 OR ""anti-BDCA2"") AND (target OR targets OR targeting OR binds OR binding) AND (""BDCA-2"" OR ""BDCA2"" OR ""CD303"" OR ""CLEC4C"" OR ""C-type lectin domain family 4 member C"")
+##
+
+The key components are:
+
+1. Litifilimab and its synonyms/alternate names (BIIB059, anti-BDCA2). This ensures we find documents specifically about this drug.
+
+2. General terms related to drug targets (target, targets, targeting, binds, binding). This captures the concept of what the drug acts upon.
+
+3. The specific known target of Litifilimab, BDCA-2, and its various synonyms (CD303, CLEC4C, C-type lectin domain family 4 member C). Including these synonyms improves recall by accounting for different ways the target may be referred to.
+
+The query aims to find documents that mention Litifilimab along with language indicating its biological target, specifically honing in on BDCA-2 and its synonyms. The AND operators ensure all key concepts are present.
+
+Let me know if you would like me to modify or expand the query further. I tried to focus on the most relevant terms while still allowing for some variability in how the drug and target may be mentioned.","{'query': {'query_string': {'query': '(Litifilimab OR BIIB059 OR ""anti-BDCA2"") AND (target OR targets OR targeting OR binds OR binding) AND (""BDCA-2"" OR ""BDCA2"" OR ""CD303"" OR ""CLEC4C"" OR ""C-type lectin domain family 4 member C"")'}}, 'size': 50}",,"['36069871', '32335844', '37148249', '30645203', '30377889', '37184875', '37877249', '25762615', '24829416', '30776023']",[],[],[],0.1,0.5,0.16666666666666669
+64136fbf201352f04a00003d,What is AUROC in context of predictive modeling?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What is AUROC in context of predictive modeling?"":
+
+##
+(""AUROC"" OR ""area under the receiver operating characteristic curve""~5 OR ""AUC-ROC"" OR ""area under the ROC curve""~5) AND (""predictive modeling"" OR ""predictive model"" OR ""prediction model"" OR ""machine learning model"" OR ""statistical model"") AND (definition OR meaning OR interpretation OR metric OR measure OR ""performance evaluation"" OR ""model evaluation"")
+##
+
+The key components are:
+
+1. AUROC and its synonyms/related terms:
+   - Exact match for ""AUROC""
+   - Proximity match for ""area under the receiver operating characteristic curve"" allowing for some word variation
+   - Exact match for ""AUC-ROC"" acronym
+   - Proximity match for ""area under the ROC curve"" allowing for some word variation
+
+2. Predictive modeling context:
+   - ""predictive modeling"" and its variants like ""predictive model"", ""prediction model""
+   - Related terms like ""machine learning model"" and ""statistical model""
+
+3. Terms related to defining or explaining a concept:
+   - definition, meaning, interpretation
+   - metric, measure, ""performance evaluation"", ""model evaluation""
+
+The query aims to find documents that mention AUROC or its synonyms specifically in the context of predictive modeling, and that provide a definition, interpretation, or explanation of the term. The proximity matches allow for some flexibility in phrasing while still maintaining relevance.","{'query': {'query_string': {'query': '(""AUROC"" OR ""area under the receiver operating characteristic curve""~5 OR ""AUC-ROC"" OR ""area under the ROC curve""~5) AND (""predictive modeling"" OR ""predictive model"" OR ""prediction model"" OR ""machine learning model"" OR ""statistical model"") AND (definition OR meaning OR interpretation OR metric OR measure OR ""performance evaluation"" OR ""model evaluation"")'}}, 'size': 50}",,"['31967640', '37259715', '37410777', '37478157', '33107830', '33019212', '37419761', '35834893', '36719788', '36276886', '36385607', '34526544', '37710210', '37408729', '36805232', '32838752', '17238378', '36153409', '34916699', '34145862', '35959132', '24608868', '35177692', '37576311', '37259173', '37657148', '37261539', '21814106', '17569110', '36544119', '32638010', '34932043', '35671743', '35578254', '29792141', '37981529', '36824494', '25891755', '37522430', '33016491', '32488759', '32894241', '29153662', '31420617', '32298292', '31323204', '17876750', '36581881', '36263637', '29023230']",[],[],[],0.1,0.03333333333333333,0.05
+63fa13da201352f04a000001,Is PRP-40 regulation of microexons a conserved phenomenon?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is PRP-40 regulation of microexons a conserved phenomenon?"":
+
+##
+(""PRP-40"" OR ""PRP 40"" OR ""pre-mRNA processing factor 40"") AND (regulat* OR control* OR modulat*) AND (microexon OR ""micro-exon"" OR ""micro exon"") AND (conserved OR preservation OR ""evolutionary conservation""~2 OR ""evolutionarily conserved"" OR ""cross-species"" OR ""across species"")
+##
+
+The key components are:
+1. PRP-40 and its synonyms
+2. Regulation and related terms like control and modulate, using wildcards to capture variations
+3. Microexon and its variant forms
+4. Conservation and related concepts like preservation, evolutionary conservation, cross-species
+
+The query aims to find documents that mention PRP-40's regulation of microexons along with language about conservation or preservation across species/evolution. The fuzzy operator ~2 allows for some variability in the phrase ""evolutionary conservation"".
+
+By focusing on the key entities and concepts while allowing for some terminology variation, the query tries to balance precision and recall. The AND operators ensure all main components are present.
+
+Let me know if you would like me to modify or expand the query further based on your specific needs or domain knowledge.","{'query': {'query_string': {'query': '(""PRP-40"" OR ""PRP 40"" OR ""pre-mRNA processing factor 40"") AND (regulat* OR control* OR modulat*) AND (microexon OR ""micro-exon"" OR ""micro exon"") AND (conserved OR preservation OR ""evolutionary conservation""~2 OR ""evolutionarily conserved"" OR ""cross-species"" OR ""across species"")'}}, 'size': 50}",,[],[],[],[],0.0,0.0,0.0
+64178e15690f196b51000020,Is casimersen effective for the treatment of Duchenne muscular dystrophy?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is casimersen effective for the treatment of Duchenne muscular dystrophy?"":
+
+##
+(casimersen OR kynmobi) AND (""duchenne muscular dystrophy"" OR DMD) AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical benefit"" OR ""therapeutic benefit"") AND (treatment OR therapy OR ""management"")
+##
+
+The key components are:
+
+1. Casimersen and its brand name Kynmobi, connected by OR to capture either term.
+
+2. Duchenne muscular dystrophy and its abbreviation DMD, in quotes and connected by OR.
+
+3. Terms related to effectiveness like effective, effectiveness, efficacy, ""treatment outcome"", ""clinical benefit"", ""therapeutic benefit"", connected by OR to capture various ways effectiveness may be discussed.
+
+4. General treatment terms like treatment, therapy, management, connected by OR.
+
+The main clauses are connected with AND to require all the key concepts - the drug, the disease, effectiveness, and treatment.
+
+The query aims to find documents discussing the effectiveness of casimersen for treating DMD specifically. It includes key synonyms to improve recall while still focusing on the core concepts to maintain precision and relevance to the original question.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(casimersen OR kynmobi) AND (""duchenne muscular dystrophy"" OR DMD) AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical benefit"" OR ""therapeutic benefit"") AND (treatment OR therapy OR ""management"")'}}, 'size': 50}",,"['33861387', '36401026', '34097287', '35213020', '30171533']",[],[],[],0.2,1.0,0.33333333333333337
+63f02ceaf36125a426000015,Which are the targets of Tirzepatide?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""Which are the targets of Tirzepatide?"":
+
+##
+(tirzepatide OR ""ly3298176"" OR ""ly 3298176"") AND (target OR targets OR receptor OR receptors) AND (""glp-1"" OR ""glp 1"" OR ""glucagon-like peptide-1"" OR ""glucagon like peptide 1"" OR ""glucagon-like peptide 1"" OR ""glp-1 receptor"" OR ""glp 1 receptor"" OR ""glp-1r"") AND (""gip"" OR ""glucose-dependent insulinotropic polypeptide"" OR ""glucose dependent insulinotropic polypeptide"" OR ""gastric inhibitory polypeptide"" OR ""gip receptor"" OR ""gipr"")
+##
+
+The key components are:
+1. Tirzepatide and its alternate name/identifier LY3298176
+2. Terms related to molecular targets like ""target"", ""receptor""
+3. The two main known targets of tirzepatide:
+   - GLP-1 (glucagon-like peptide-1) and its receptor (GLP-1R)
+   - GIP (glucose-dependent insulinotropic polypeptide, also known as gastric inhibitory polypeptide) and its receptor (GIPR)
+
+I included various synonyms and alternate spellings for GLP-1 and GIP to maximize recall of relevant documents. The AND operators ensure that the results mention tirzepatide along with its targets. The query is fairly specific since it focuses on the known molecular targets rather than broader physiological effects.
+
+Let me know if you would like me to modify or expand the query further. I aimed to balance precision and recall based on the specificity of the question.","{'query': {'query_string': {'query': '(tirzepatide OR ""ly3298176"" OR ""ly 3298176"") AND (target OR targets OR receptor OR receptors) AND (""glp-1"" OR ""glp 1"" OR ""glucagon-like peptide-1"" OR ""glucagon like peptide 1"" OR ""glucagon-like peptide 1"" OR ""glp-1 receptor"" OR ""glp 1 receptor"" OR ""glp-1r"") AND (""gip"" OR ""glucose-dependent insulinotropic polypeptide"" OR ""glucose dependent insulinotropic polypeptide"" OR ""gastric inhibitory polypeptide"" OR ""gip receptor"" OR ""gipr"")'}}, 'size': 50}",,"['37551549', '36462999', '36289848', '36751934', '36634066', '36157450', '37800107', '37279858', '35065096', '35872608', '37824027', '34446852', '34819089', '35217653', '35333651', '30293770', '36313764', '36004653', '37086147', '37070418', '32360365', '35745639', '33778934', '37792556', '37331253', '36620987', '37092144', '35651477', '37897727', '33325008', '36639119', '36927378', '36849212', '35830001', '37498367', '37456095', '37591245', '32291277', '37430117', '36909312', '36700380', '35593668', '36598526', '37308724', '35674880', '32519795', '35767712', '37526853', '37947489', '37940101']",[],[],[],0.0,0.0,0.0
+640e2616201352f04a00002a,Is medical hydrology the same as Spa therapy?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is medical hydrology the same as Spa therapy?"":
+
+##
+(""medical hydrology"" OR ""health resort medicine"" OR balneology OR balneotherapy OR hydrotherapy) AND (""spa therapy"" OR ""spa treatment"" OR ""spa medicine"") AND (same OR equivalent OR synonymous OR ""synonymous with"" OR ""equivalent to"" OR ""same as"" OR ""identical to"" OR ""no difference"" OR ""no different"")
+##
+
+The key components are:
+1. ""medical hydrology"" and its synonyms/related terms like ""health resort medicine"", balneology, balneotherapy, hydrotherapy
+2. ""spa therapy"" and related terms like ""spa treatment"", ""spa medicine""
+3. Terms related to the concept of being the same or equivalent, like same, equivalent, synonymous, ""identical to"", ""no difference"", etc.
+
+The query aims to find documents that mention both medical hydrology (or its synonyms) and spa therapy (or related terms), along with language indicating whether they are considered the same or equivalent. The AND operator ensures all three main concepts are present.
+
+I included a range of synonyms and related terms to improve recall, but tried not to stray too far from the core concepts to maintain precision. The double quotes around phrases ensure they are searched as a unit.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""medical hydrology"" OR ""health resort medicine"" OR balneology OR balneotherapy OR hydrotherapy) AND (""spa therapy"" OR ""spa treatment"" OR ""spa medicine"") AND (same OR equivalent OR synonymous OR ""synonymous with"" OR ""equivalent to"" OR ""same as"" OR ""identical to"" OR ""no difference"" OR ""no different"")'}}, 'size': 50}",,"['15004446', '7644874', '37438576', '19771135', '18829219', '29947999', '21563003', '26158921', '29455296', '25862243', '28471579', '17943920', '9828878', '24135621', '31649376', '16011060', '16449365', '30046586', '11209546', '25534519', '36380257', '12110784', '28011998', '27225736', '37735793', '18313346', '36538403', '15689050', '31209599', '26607275', '2011839', '35606192', '6157259', '15115681', '24373369', '25605408', '17431728', '6672531', '28936572', '33740137', '34035862', '3374829', '23007254']",[],[],[],0.0,0.0,0.0
+64178e73690f196b51000023,Is eteplirsen effective for the treatment of Duchenne muscular dystrophy?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is eteplirsen effective for the treatment of Duchenne muscular dystrophy?"":
+
+##
+(eteplirsen OR ""exondys 51"") AND (""duchenne muscular dystrophy"" OR DMD) AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical benefit"" OR ""therapeutic benefit"") AND (treatment OR therapy OR ""management"")
+##
+
+The key components are:
+1. Eteplirsen and its brand name Exondys 51
+2. Duchenne muscular dystrophy and its acronym DMD
+3. Terms related to effectiveness like efficacy, treatment outcome, clinical benefit
+4. General treatment terms like therapy and management
+
+The query aims to find documents that discuss the effectiveness of eteplirsen as a treatment for DMD. It includes the drug name and its synonym, the full disease name and acronym, and a variety of terms related to treatment effectiveness.
+
+The AND operators ensure all the main concepts are present, while the OR operators allow for variations in terminology. The query is relatively focused since it includes the specific drug and disease, but the effectiveness and treatment terms are broad enough to capture potentially relevant information.
+
+Let me know if you would like me to modify or expand the query further. I tried to strike a balance between precision and recall based on the specificity of the question.","{'query': {'query_string': {'query': '(eteplirsen OR ""exondys 51"") AND (""duchenne muscular dystrophy"" OR DMD) AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical benefit"" OR ""therapeutic benefit"") AND (treatment OR therapy OR ""management"")'}}, 'size': 50}",,"['34797383', '30171533', '29771317', '36644004', '32691988', '37603868', '23907995', '30171536', '33075081', '32483212', '30556126', '35715998', '29752304', '33325654', '32112218', '33393390', '34120909', '30856119', '37036788', '30171538', '29907124', '32691346', '24282529', '36401026', '34097287', '29771942', '30195785', '36995605', '35213020', '29254734', '28990648', '35333888', '23075107', '31834673', '32865783', '37862859', '34420980', '28944732', '37610303', '30372655', '31576784', '27854228', '32417793']",[],[],[],0.1,0.3333333333333333,0.15384615384615383
+6410fa66201352f04a000034,How does CYP1A2 relate to coffee consumption and apetite?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""How does CYP1A2 relate to coffee consumption and appetite?"":
+
+##
+(""CYP1A2"" OR ""cytochrome P450 1A2"") AND 
+(""coffee consumption"" OR ""coffee intake"" OR ""coffee drinking"" OR ""caffeine consumption"" OR ""caffeine intake"") AND
+(appetite OR hunger OR ""food intake"" OR ""calorie intake"" OR ""energy intake"") AND
+(relation OR relationship OR association OR correlation OR link OR effect OR impact OR influence)
+##
+
+The key components are:
+1. CYP1A2 and its full name ""cytochrome P450 1A2""
+2. Coffee consumption and related terms like coffee intake, coffee drinking, caffeine consumption 
+3. Appetite and related concepts like hunger, food intake, calorie intake
+4. Terms describing a relationship like relation, association, correlation, link, effect, impact, influence
+
+The query aims to find documents that discuss how CYP1A2 is related to both coffee consumption and appetite. The AND operators ensure all three main concepts are present. The synonyms and related terms help capture different ways the concepts may be expressed, improving recall. At the same time, the query maintains a focus on the key entities of CYP1A2, coffee, and appetite, to keep the results precise and relevant to the original question.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""CYP1A2"" OR ""cytochrome P450 1A2"") AND (""coffee consumption"" OR ""coffee intake"" OR ""coffee drinking"" OR ""caffeine consumption"" OR ""caffeine intake"") AND(appetite OR hunger OR ""food intake"" OR ""calorie intake"" OR ""energy intake"") AND(relation OR relationship OR association OR correlation OR link OR effect OR impact OR influence)'}}, 'size': 50}",,['34564706'],[],[],[],1.0,1.0,1.0
+63f03939f36125a42600001b,What is the use of darolutamide?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is the use of darolutamide?"":
+
+##
+(darolutamide OR ""ODM-201"" OR ""Nubeqa"") AND (use OR purpose OR function OR role OR utility OR application OR ""used for"" OR ""used to"" OR treats OR treatment OR ""treatment of"") AND (""prostate cancer"" OR ""castration-resistant prostate cancer"" OR CRPC OR ""non-metastatic castration-resistant prostate cancer"" OR ""nmCRPC"" OR ""metastatic hormone-sensitive prostate cancer"" OR ""mHSPC"")
+##
+
+The key components are:
+1. Darolutamide and its synonyms/alternate names 
+2. Terms related to the use, purpose, or function of a drug
+3. The specific conditions darolutamide is used to treat, namely prostate cancer and its subtypes
+
+The query aims to find documents that mention darolutamide along with language about its use or purpose, specifically in the context of treating prostate cancer. Including the various synonyms and subtypes of prostate cancer helps improve recall while still keeping the query focused on the most relevant information.
+
+The AND operators ensure that all three main concepts (darolutamide, use/purpose, prostate cancer) are present, which helps maintain precision. The query is relatively targeted since darolutamide has a specific indication, but the synonyms and related terms allow for some variability in how the concepts might be expressed.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(darolutamide OR ""ODM-201"" OR ""Nubeqa"") AND (use OR purpose OR function OR role OR utility OR application OR ""used for"" OR ""used to"" OR treats OR treatment OR ""treatment of"") AND (""prostate cancer"" OR ""castration-resistant prostate cancer"" OR CRPC OR ""non-metastatic castration-resistant prostate cancer"" OR ""nmCRPC"" OR ""metastatic hormone-sensitive prostate cancer"" OR ""mHSPC"")'}}, 'size': 50}",,"['33237495', '30197098', '33351306', '35552309', '34002069', '31605368', '35648671', '30872920', '35305957', '36797129', '32673844', '31695432', '35553247', '36630046', '36297536', '33559101', '34207755', '37458966', '36192243', '32073798', '36266221', '28490267', '34273811', '34102978', '36028656', '37812679', '33049187', '36111393', '33735902', '32924096', '31953000', '35141248', '34572748', '34722276', '32958445', '33554636', '36087070', '34308608', '34797506', '28851578', '32605736', '36823372', '32822968', '32278840', '37660438', '30115959', '34920959', '32282865', '33552935', '26313416']",[],[],[],0.0,0.0,0.0
+64136664201352f04a00003b,What are the main clinical features of small-fiber neuropathy (SFN)?,list,,"Here is my attempt at an Elasticsearch query string for the question ""What are the main clinical features of small-fiber neuropathy (SFN)?"":
+
+##
+(""small-fiber neuropathy"" OR ""small fiber neuropathy"" OR ""small fibre neuropathy"" OR SFN) AND 
+(""clinical features"" OR ""clinical manifestations"" OR ""clinical presentation"" OR ""clinical characteristics"" OR ""signs and symptoms"" OR ""symptoms"") AND
+(pain OR burning OR tingling OR numbness OR paresthesia OR dysesthesia OR allodynia OR hyperalgesia OR ""autonomic dysfunction"" OR ""autonomic symptoms"" OR sweating OR ""blood pressure"" OR ""heart rate"" OR ""gastrointestinal symptoms"" OR ""bladder symptoms"")
+##
+
+The key components are:
+
+1. Small-fiber neuropathy and its synonyms/abbreviations to ensure we retrieve documents specifically about this condition.
+
+2. Terms related to clinical features, manifestations, presentation, signs and symptoms, to find information on how the condition presents clinically.
+
+3. Specific symptoms and signs associated with small-fiber neuropathy, including:
+   - Sensory symptoms like pain, burning, tingling, numbness, paresthesia, dysesthesia, allodynia, hyperalgesia
+   - Autonomic symptoms related to sweating, blood pressure, heart rate, gastrointestinal function, bladder function
+
+The query aims to find documents that discuss the characteristic clinical features of small-fiber neuropathy by requiring the condition name along with general terms related to clinical presentation, as well as specific common symptoms. The synonyms and related terms help improve recall while still keeping the query focused on the most relevant information.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""small-fiber neuropathy"" OR ""small fiber neuropathy"" OR ""small fibre neuropathy"" OR SFN) AND (""clinical features"" OR ""clinical manifestations"" OR ""clinical presentation"" OR ""clinical characteristics"" OR ""signs and symptoms"" OR ""symptoms"") AND(pain OR burning OR tingling OR numbness OR paresthesia OR dysesthesia OR allodynia OR hyperalgesia OR ""autonomic dysfunction"" OR ""autonomic symptoms"" OR sweating OR ""blood pressure"" OR ""heart rate"" OR ""gastrointestinal symptoms"" OR ""bladder symptoms"")'}}, 'size': 50}",,"['29542204', '28221302', '23304492', '25484269', '28827489', '31639840', '33830702', '9198925', '34766365', '26872938', '21435945', '35130356', '22570215', '27552388', '29706768', '8610490', '23716362', '20035332', '30247738', '28339448', '31348533', '29154979', '23982054', '31773305', '27660061', '20926271', '22774572', '20433606', '15546602', '25597261', '26780379', '20644950', '27315103', '31325646', '12803683', '33337383', '36714112', '36437696', '35830153', '21286866', '36168866', '30753241', '34402516', '30636091', '32012301', '26578039', '26114213', '12210380', '33527744', '35950732']",[],[],[],0.0,0.0,0.0
+6415c53e690f196b51000012,When was Keytruda approved by the FDA for the treatment of metastatic non-small cell lung cancer?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""When was Keytruda approved by the FDA for the treatment of metastatic non-small cell lung cancer?"":
+
+##
+(Keytruda OR pembrolizumab) AND (""non-small cell lung cancer"" OR NSCLC OR ""lung cancer"") AND (metastatic OR advanced) AND (approved OR approval OR ""FDA approval"") AND (date OR year OR time)
+##
+
+The key components are:
+- Keytruda and its generic name pembrolizumab
+- Non-small cell lung cancer and its abbreviation NSCLC, plus the more general term ""lung cancer""
+- Metastatic and the related term advanced, to specify the stage of cancer
+- Approved, approval, ""FDA approval"" to capture the regulatory approval aspect
+- Date, year, time to find mentions of when the approval occurred
+
+The query aims to find documents that discuss the FDA approval of Keytruda specifically for metastatic NSCLC, and that mention a date or time of approval. The synonyms and related terms help capture variations in phrasing while still keeping the query focused on the key entities and concepts. The parentheses and AND operators ensure all main components are present.
+
+Let me know if you would like me to modify or expand the query further. I tried to balance specificity and comprehensiveness for the given question.","{'query': {'query_string': {'query': '(Keytruda OR pembrolizumab) AND (""non-small cell lung cancer"" OR NSCLC OR ""lung cancer"") AND (metastatic OR advanced) AND (approved OR approval OR ""FDA approval"") AND (date OR year OR time)'}}, 'size': 50}",,"['34398032', '27713639', '28761384', '27026676', '28293123', '31988934', '34292540', '32843385', '28228226', '34363829', '33569208', '36046437', '33966436', '33040674', '27252413', '28408617', '37364568', '33469803', '28276698', '35994596', '30670923', '27623999', '33842144', '29662547', '34221986', '29317551', '26389763', '31616186', '27716999', '30304963', '34795901', '29992894', '36797806', '32601742', '35399230', '27574451', '25685857', '30646794', '29862232', '28624922', '36323057', '27234522', '35729418', '35167399', '31645893', '27310708', '27557830', '27563655', '36647072', '31043955']",[],[],[],0.0,0.0,0.0
+6417949d690f196b51000035,Which gene therapies are under investigation for Duchenne muscular dystrophy?,list,,"Here is my attempt at an Elasticsearch query string for the question ""Which gene therapies are under investigation for Duchenne muscular dystrophy?"":
+
+##
+(""gene therapy"" OR ""gene therapies"" OR ""gene transfer"" OR ""gene replacement"" OR ""gene editing"" OR ""genome editing"" OR ""exon skipping"" OR ""micro-dystrophin"" OR ""AAV vector""~2) AND (""duchenne muscular dystrophy"" OR DMD) AND (investigat* OR research* OR stud* OR trial OR trials OR pipeline OR ""clinical development"" OR ""preclinical development"")
+##
+
+The key components are:
+
+1. Gene therapy related terms: This includes the exact phrase ""gene therapy"" and its plural, as well as related concepts like gene transfer, gene replacement, gene/genome editing, exon skipping, micro-dystrophin, and AAV vectors (a common delivery method for gene therapies). The fuzzy operator ~2 allows for some variability in the AAV vector phrase.
+
+2. Duchenne muscular dystrophy and its abbreviation DMD. 
+
+3. Terms related to research and investigation: This includes words like investigate, research, study, trial(s), pipeline, and phrases like ""clinical development"" and ""preclinical development"". The wildcard * allows for variations in word endings.
+
+The query aims to find documents that mention gene therapy approaches in the context of research or clinical investigation for DMD. It includes a variety of synonyms and related terms to capture the key concepts, while still maintaining a focus on the specific disease and type of treatment asked about in the question.","{'query': {'query_string': {'query': '(""gene therapy"" OR ""gene therapies"" OR ""gene transfer"" OR ""gene replacement"" OR ""gene editing"" OR ""genome editing"" OR ""exon skipping"" OR ""micro-dystrophin"" OR ""AAV vector""~2) AND (""duchenne muscular dystrophy"" OR DMD) AND (investigat* OR research* OR stud* OR trial OR trials OR pipeline OR ""clinical development"" OR ""preclinical development"")'}}, 'size': 50}",,"['24308293', '20580709', '36401038', '30093306', '28398005', '15651329', '15031985', '26263476', '36874243', '36864908', '30734120', '27542949', '36401035', '37652974', '17981565', '22692496', '34175043', '19527108', '29351004', '29463117', '33651713', '36401039', '11898504', '37425427', '22892952', '30718090', '30621068', '37032509', '29936551', '26159373', '36515166', '36911945', '21274260', '23075107', '22609847', '33074029', '21436158', '35143959', '22068425', '29366352', '34180420', '31147635', '8836495', '22454057', '21691429', '30111482', '20434401', '29781327', '21967249', '37175881']",[],[],[],0.0,0.0,0.0
+63f02a82f36125a426000013,Does CIDEB mutation protect from liver disease?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Does CIDEB mutation protect from liver disease?"":
+
+##
+(""CIDEB"" OR ""cell death-inducing DFFA-like effector B"") AND (mutation OR variant OR polymorphism) AND (protect OR protection OR protective OR prevent OR prevention OR preventive) AND (""liver disease"" OR ""hepatic disease"" OR cirrhosis OR ""fatty liver"" OR NAFLD OR NASH OR ""liver failure"" OR ""liver damage"" OR hepatotoxicity OR hepatitis)
+##
+
+The key components are:
+1. CIDEB gene and its full name
+2. Mutation and related terms like variant and polymorphism
+3. Protect and related terms like prevention 
+4. Liver disease and specific types/synonyms like NAFLD, cirrhosis, hepatitis, etc.
+
+The query aims to find documents that mention CIDEB mutations along with language about protection and liver diseases. The synonyms help capture different ways the concepts could be phrased.
+
+The AND operators ensure all the main concepts are present, which is important for the specific question being asked. I included a range of liver disease terms for better recall, but still kept the query focused on CIDEB, mutation, and protection to maintain precision.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""CIDEB"" OR ""cell death-inducing DFFA-like effector B"") AND (mutation OR variant OR polymorphism) AND (protect OR protection OR protective OR prevent OR prevention OR preventive) AND (""liver disease"" OR ""hepatic disease"" OR cirrhosis OR ""fatty liver"" OR NAFLD OR NASH OR ""liver failure"" OR ""liver damage"" OR hepatotoxicity OR hepatitis)'}}, 'size': 50}",,"['37144531', '37128635', '35970900']",[],[],[],0.0,0.0,0.0
+64089b21201352f04a000021,Can you summarize the function of CDK9?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""Can you summarize the function of CDK9?"":
+
+##
+(""CDK9"" OR ""cyclin-dependent kinase 9"" OR ""cyclin dependent kinase 9"") AND (function OR role OR activity OR ""mechanism of action"" OR ""mode of action"") AND (""transcription elongation"" OR ""RNA polymerase II"" OR ""RNA Pol II"" OR ""RNAPII"" OR ""P-TEFb"" OR ""positive transcription elongation factor"" OR ""transcription regulation"" OR ""gene expression regulation"")
+##
+
+The key components are:
+
+1. CDK9 and its full name ""cyclin-dependent kinase 9"" as the main entity of interest.
+
+2. General terms related to the function or role of a protein, such as ""function"", ""role"", ""activity"", ""mechanism of action"".
+
+3. Specific terms related to CDK9's known functions in transcription elongation and regulation, such as ""transcription elongation"", ""RNA polymerase II"" (and synonyms), ""P-TEFb"", ""transcription regulation"", ""gene expression regulation"".
+
+The query aims to find documents that discuss the function or role of CDK9, with a focus on its involvement in transcription elongation and regulation. The specific terms help hone in on CDK9's main known functions, while the general terms allow for potentially novel or less common functional descriptions to also be captured.
+
+The synonyms and related terms help improve recall while still maintaining relevance to the original question. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""CDK9"" OR ""cyclin-dependent kinase 9"" OR ""cyclin dependent kinase 9"") AND (function OR role OR activity OR ""mechanism of action"" OR ""mode of action"") AND (""transcription elongation"" OR ""RNA polymerase II"" OR ""RNA Pol II"" OR ""RNAPII"" OR ""P-TEFb"" OR ""positive transcription elongation factor"" OR ""transcription regulation"" OR ""gene expression regulation"")'}}, 'size': 50}",,"['34146121', '23744076', '32366382', '18250157', '12651893', '12622719', '34811514', '26659056', '12944920', '18218627', '19029809', '27398404', '27417125', '17169370', '10377393', '16103164', '33730585', '25524031', '17671421', '19844166', '28722178', '37163588', '31594641', '15941832', '23977357', '18780834', '15514168', '22592529', '15713662', '15564463', '18971272', '15276198', '23840966', '16720337', '22458775', '20930849', '10574912', '11145967', '18662700', '25233930', '16428435', '10974544', '24385927', '15713661', '17341462', '21127351', '34062779', '17289077', '23977272', '11739744']",[],[],[],0.1,0.1,0.10000000000000002
+6410eead201352f04a000030,How does RBM24 control QT interval?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""How does RBM24 control QT interval?"":
+
+##
+(""RBM24"" OR ""RNA binding motif protein 24"") AND (""QT interval"" OR ""QT prolongation"" OR ""long QT syndrome"" OR LQTS) AND (control OR regulate OR modulate OR affect OR influence OR mechanism OR pathway)
+##
+
+The key components are:
+1. RBM24 and its full name ""RNA binding motif protein 24""
+2. QT interval and related terms like QT prolongation and long QT syndrome (LQTS)
+3. Terms related to control or regulation, like modulate, affect, influence, mechanism, pathway
+
+The query requires both the gene RBM24 and the concept of QT interval to be present, along with some term related to control or regulation. This helps focus on the specific relationship asked about in the question.
+
+I included a few synonyms and related terms for QT interval and for the concept of control/regulation, to improve recall without sacrificing too much precision. The query aims to find documents discussing how RBM24 influences or regulates QT interval duration or long QT syndrome.
+
+Let me know if you would like me to modify or expand the query further. I tried to strike a balance between specificity and inclusiveness based on the question asked.","{'query': {'query_string': {'query': '(""RBM24"" OR ""RNA binding motif protein 24"") AND (""QT interval"" OR ""QT prolongation"" OR ""long QT syndrome"" OR LQTS) AND (control OR regulate OR modulate OR affect OR influence OR mechanism OR pathway)'}}, 'size': 50}",,['36454480'],[],[],[],1.0,1.0,1.0
+64105502201352f04a00002d,Is North Star Ambulatory Assessment score a reliable clinical outcome for disease progression assessment in Duchenne Muscular Dystrophy?,yesno,,"Here is my attempt at an Elasticsearch query string for the given biomedical question:
+
+##
+(""North Star Ambulatory Assessment"" OR NSAA OR ""NSAA score"") AND 
+(""duchenne muscular dystrophy"" OR DMD) AND
+(reliable OR validity OR ""clinically meaningful"" OR ""clinical relevance"" OR ""clinically relevant"") AND
+(""clinical outcome"" OR ""clinical endpoint"" OR ""outcome measure"") AND
+(""disease progression"" OR ""disease course"" OR ""progression assessment"" OR ""monitoring progression"")
+##
+
+The key components are:
+
+1. North Star Ambulatory Assessment and its acronym NSAA, which is the main assessment tool in question.
+
+2. Duchenne muscular dystrophy and its acronym DMD, specifying the disease context.
+
+3. Terms related to reliability and clinical relevance like ""reliable"", ""validity"", ""clinically meaningful"", etc. This captures the concept of the NSAA being a reliable measure.
+
+4. Terms related to clinical outcomes and endpoints, capturing the NSAA's potential role as an outcome measure.
+
+5. Terms related to disease progression and monitoring progression, specifying the aspect of DMD that the NSAA is being evaluated for.
+
+The AND operators ensure that all key aspects of the question are addressed in the search results. The query aims to balance precision by focusing on the specific assessment (NSAA) and disease (DMD), while improving recall through the inclusion of synonyms and related terms for the concepts of reliability, clinical outcomes, and disease progression assessment.","{'query': {'query_string': {'query': '(""North Star Ambulatory Assessment"" OR NSAA OR ""NSAA score"") AND (""duchenne muscular dystrophy"" OR DMD) AND(reliable OR validity OR ""clinically meaningful"" OR ""clinical relevance"" OR ""clinically relevant"") AND(""clinical outcome"" OR ""clinical endpoint"" OR ""outcome measure"") AND(""disease progression"" OR ""disease course"" OR ""progression assessment"" OR ""monitoring progression"")'}}, 'size': 50}",,"['29167533', '36679627']",[],[],[],0.0,0.0,0.0
+63f032caf36125a42600001a,What is the mechanism of action of rilzabrutinib?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is the mechanism of action of rilzabrutinib?"":
+
+##
+(""rilzabrutinib"" OR ""PRN1008"" OR ""PRN-1008"" OR ""PRN 1008"") AND 
+(""mechanism of action"" OR ""mode of action"" OR ""pharmacodynamics"" OR ""pharmacology"" OR ""activity"" OR ""function"" OR ""effect"" OR ""inhibits"" OR ""inhibitor"") AND
+(""Bruton's tyrosine kinase"" OR BTK OR ""BTK inhibitor"" OR ""tyrosine kinase inhibitor"" OR ""TKI"" OR ""B-cell receptor signaling"" OR ""B cell receptor signaling"" OR ""BCR signaling"")
+##
+
+The key components are:
+
+1. Rilzabrutinib and its alternate names/codes like PRN1008. This ensures we find documents specifically about this drug.
+
+2. General terms related to mechanism of action like pharmacodynamics, activity, function, inhibits, etc. This casts a wide net for potentially relevant information.
+
+3. Specific terms related to rilzabrutinib's known mechanism of action as a Bruton's tyrosine kinase (BTK) inhibitor that affects B-cell receptor signaling. This helps hone in on the precise MOA while allowing for some variability in terminology.
+
+The query aims to balance finding as much relevant information as possible about rilzabrutinib's MOA while not being too broad or introducing irrelevant terms. The use of parentheses and the AND operator ensures that all three key concept areas are present in the retrieved documents.
+
+Let me know if you would like me to modify or expand the query further based on your specific needs or additional background knowledge about rilzabrutinib.","{'query': {'query_string': {'query': '(""rilzabrutinib"" OR ""PRN1008"" OR ""PRN-1008"" OR ""PRN 1008"") AND (""mechanism of action"" OR ""mode of action"" OR ""pharmacodynamics"" OR ""pharmacology"" OR ""activity"" OR ""function"" OR ""effect"" OR ""inhibits"" OR ""inhibitor"") AND(""Bruton\'s tyrosine kinase"" OR BTK OR ""BTK inhibitor"" OR ""tyrosine kinase inhibitor"" OR ""TKI"" OR ""B-cell receptor signaling"" OR ""B cell receptor signaling"" OR ""BCR signaling"")'}}, 'size': 50}",,"['35302767', '33674445', '34447768', '33806595', '32803903', '35417637', '35175630', '33942286', '28636208', '34443496', '35301810', '37060187', '37869360', '34351020', '34631841', '36182620', '37735554', '36622549', '35166638']",[],[],[],0.1,0.3333333333333333,0.15384615384615383
+641368ee201352f04a00003c,What are the  types/categories of adult diffuse gliomas.,list,,"Here is my attempt at an Elasticsearch query string for the question ""What are the types/categories of adult diffuse gliomas."":
+
+##
+(""adult diffuse gliomas"" OR ""diffuse gliomas in adults"") AND 
+(types OR categories OR classification OR subtypes OR variants OR ""WHO classification""~5) AND
+(""astrocytoma"" OR ""oligodendroglioma"" OR ""oligoastrocytoma"" OR ""glioblastoma"" OR ""IDH-mutant"" OR ""IDH-wildtype"" OR ""IDH mutant"" OR ""IDH wildtype"" OR ""1p/19q codeletion"" OR ""1p/19q co-deletion"")
+##
+
+The key components are:
+1. The main entity ""adult diffuse gliomas"" and a variant phrase
+2. Terms related to types/categories like classification, subtypes, variants. I also included ""WHO classification"" with a proximity operator, as the World Health Organization's classification system is commonly used for gliomas.
+3. Specific types/categories of adult diffuse gliomas like astrocytoma, oligodendroglioma, glioblastoma, as well as molecular subtypes based on IDH mutation status and 1p/19q codeletion. 
+
+The query aims to find documents that discuss the types or categories of adult diffuse gliomas, including both histological types and molecular subtypes. The specific type terms help improve precision, while still allowing for some variability in terminology. The query is relatively broad to maximize recall of potentially relevant categories.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""adult diffuse gliomas"" OR ""diffuse gliomas in adults"") AND (types OR categories OR classification OR subtypes OR variants OR ""WHO classification""~5) AND(""astrocytoma"" OR ""oligodendroglioma"" OR ""oligoastrocytoma"" OR ""glioblastoma"" OR ""IDH-mutant"" OR ""IDH-wildtype"" OR ""IDH mutant"" OR ""IDH wildtype"" OR ""1p/19q codeletion"" OR ""1p/19q co-deletion"")'}}, 'size': 50}",,"['37239289', '30148717', '33223023', '31175262', '34504304', '37278280', '28801347', '28549927', '37562166', '32640746', '26968173', '26824661', '26741321', '36853347', '30624711', '37883975', '34863298', '32386320', '31706351', '37737691', '25744348', '26236800', '31678207', '32954439', '23109653', '34055608', '21889777', '36788155', '33228806', '26068765', '32284464', '38085892', '9861648', '34729052', '30937703', '33606385', '27799281', '28339700', '34782727', '35876874', '37741941', '35558510', '35957904', '30175510', '34498062', '34352809', '28064387', '32153349', '35859544', '32557428']",[],[],[],0.3,0.21428571428571427,0.25
+6415ca99690f196b51000019,Have chimeric antigen receptor (CAR)-T cell therapies been approved for the treatment of B cell malignancies?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Have chimeric antigen receptor (CAR)-T cell therapies been approved for the treatment of B cell malignancies?"":
+
+##
+((""chimeric antigen receptor"" OR ""CAR"") AND (""T cell"" OR ""T-cell"") AND (therapy OR therapies OR therapeutic OR treatment)) AND (approved OR approval OR ""FDA approval"" OR ""regulatory approval"") AND (""B cell malignancy"" OR ""B-cell malignancy"" OR ""B-cell lymphoma"" OR ""B-cell leukemia"" OR ""B cell lymphoma"" OR ""B cell leukemia"" OR ""acute lymphoblastic leukemia"" OR ALL OR ""chronic lymphocytic leukemia"" OR CLL OR ""diffuse large B-cell lymphoma"" OR DLBCL OR ""mantle cell lymphoma"" OR MCL)
+##
+
+The key components are:
+1. CAR-T cell therapy and its synonyms/variants
+2. Approval-related terms
+3. B cell malignancies and specific types
+
+The query uses AND to require all three main concepts. It includes synonyms and related terms for each concept to improve recall, such as:
+- Both ""chimeric antigen receptor"" and ""CAR"", ""T cell"" and ""T-cell"", therapy/therapies/therapeutic/treatment
+- Approved, approval, ""FDA approval"", ""regulatory approval""
+- ""B cell malignancy"", ""B-cell malignancy"", and specific types like lymphomas and leukemias
+
+The parentheses and double quotes ensure the multi-word terms are treated as phrases. The query aims to find documents discussing CAR-T therapies that have been approved specifically for B cell malignancies. It is relatively precise while still capturing variations in terminology.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '((""chimeric antigen receptor"" OR ""CAR"") AND (""T cell"" OR ""T-cell"") AND (therapy OR therapies OR therapeutic OR treatment)) AND (approved OR approval OR ""FDA approval"" OR ""regulatory approval"") AND (""B cell malignancy"" OR ""B-cell malignancy"" OR ""B-cell lymphoma"" OR ""B-cell leukemia"" OR ""B cell lymphoma"" OR ""B cell leukemia"" OR ""acute lymphoblastic leukemia"" OR ALL OR ""chronic lymphocytic leukemia"" OR CLL OR ""diffuse large B-cell lymphoma"" OR DLBCL OR ""mantle cell lymphoma"" OR MCL)'}}, 'size': 50}",,"['34277836', '32925186', '34503084', '33212810', '35011583', '34777381', '34152469', '29771253', '36633964', '30680780', '33448873', '33275669', '37899200', '35672571', '33361513', '29024301', '33872091', '37358555', '30120708', '33630232', '34830003', '37935098', '38072433', '31723825', '35723942', '30713539', '30880819', '30652353', '33820908', '34922844', '34950390', '34277304', '38090582', '33789222', '32014447', '37394970', '38068428', '35560330', '35420395', '34768218', '31754328', '38027932', '32043764', '36686821', '32055645', '34466048', '33619641', '35012754', '35634281', '32347759']",[],[],[],0.0,0.0,0.0
+64178e4b690f196b51000022,Is golodirsen effective for the treatment of Duchenne muscular dystrophy?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is golodirsen effective for the treatment of Duchenne muscular dystrophy?"":
+
+##
+(golodirsen AND (""duchenne muscular dystrophy"" OR DMD OR ""duchenne's muscular dystrophy"")) AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical benefit"" OR ""therapeutic benefit"" OR ""clinical efficacy"" OR ""therapeutic efficacy"")
+##
+
+The key components are:
+
+1. Golodirsen, the specific drug mentioned in the question.
+
+2. Duchenne muscular dystrophy and its common acronym DMD, as well as a synonym ""duchenne's muscular dystrophy"". These cover the main ways of referring to the disease.
+
+3. Terms related to treatment effectiveness such as effective, effectiveness, efficacy, ""treatment outcome"", ""clinical benefit"", ""therapeutic benefit"", ""clinical efficacy"", ""therapeutic efficacy"". These capture various ways of discussing how well a treatment works.
+
+The AND operators ensure that the results contain both the specific drug and disease, as well as some discussion of treatment effectiveness. The query is relatively focused since it includes a specific drug and disease, but the synonyms for effectiveness help improve recall by capturing different terminology.
+
+Let me know if you would like me to modify or expand the query further. The goal is to balance finding relevant information to answer the question while maintaining precision.","{'query': {'query_string': {'query': '(golodirsen AND (""duchenne muscular dystrophy"" OR DMD OR ""duchenne\'s muscular dystrophy"")) AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical benefit"" OR ""therapeutic benefit"" OR ""clinical efficacy"" OR ""therapeutic efficacy"")'}}, 'size': 50}",,"['33025945', '32112218', '32483212', '34788571', '36401027', '32691346', '36401026', '35213020', '36995605', '34092651', '34097287', '30171533']",[],[],[],0.3,0.75,0.4285714285714285
+63f043e4f36125a426000023,Is Baricitinib effective for Alopecia Areata?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is Baricitinib effective for Alopecia Areata?"":
+
+##
+(baricitinib OR ""LY3009104"" OR ""INCB028050"") AND (""alopecia areata"" OR ""autoimmune alopecia"" OR ""spot baldness"") AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical outcome"" OR ""clinical efficacy"" OR ""therapeutic effect"")
+##
+
+The key components are:
+
+1. Baricitinib and its alternate names/codes (LY3009104, INCB028050)
+2. Alopecia areata and its synonyms (autoimmune alopecia, spot baldness)
+3. Terms related to effectiveness (effective, effectiveness, efficacy, treatment outcome, clinical outcome, clinical efficacy, therapeutic effect)
+
+The query requires all three main concepts to be present using the AND operator. It includes synonyms and related terms for the drug, the condition, and the concept of effectiveness to improve recall. At the same time, it avoids overly broad terms to maintain precision.
+
+The double quotes around multi-word terms ensure they are searched as phrases. The query aims to find documents that specifically discuss the effectiveness of baricitinib for treating alopecia areata.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(baricitinib OR ""LY3009104"" OR ""INCB028050"") AND (""alopecia areata"" OR ""autoimmune alopecia"" OR ""spot baldness"") AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical outcome"" OR ""clinical efficacy"" OR ""therapeutic effect"")'}}, 'size': 50}",,"['37042112', '37717224', '35330989', '31930807', '36695751', '37683061', '35334197', '37436019', '37339501', '34090959', '36763827', '26137574', '36855020', '33870531', '37833617', '36239359', '32015973', '37089829', '37606849', '37195491', '37556146', '37138134', '37556530', '37138884', '30433838', '38018739', '37781168', '37740856', '30100707', '36070222', '36124361', '37467740', '38084867', '36408593', '36478475', '37991697', '37752637', '36045780', '37870096', '34962052', '36933614', '37877023', '36848919', '37452455', '37900778', '30688081', '36848918', '31606872', '30762909', '37708254']",[],[],[],0.2,1.0,0.33333333333333337
+64137616201352f04a000041,Anemia is not associated with chronic kidney failure,yesno,,"Here is my attempt at an Elasticsearch query string for the statement ""Anemia is not associated with chronic kidney failure"":
+
+##
+(anemia OR ""low hemoglobin"" OR ""low hematocrit"" OR ""low red blood cell count"") AND 
+(""chronic kidney failure"" OR ""chronic renal failure"" OR ""end-stage renal disease"" OR ESRD OR ""chronic kidney disease"" OR CKD OR ""chronic kidney insufficiency"" OR ""chronic renal insufficiency"") AND 
+(NOT (""associated with"" OR ""related to"" OR ""linked to"" OR ""correlated with"" OR ""caused by""))
+##
+
+The key components are:
+1. Anemia and its related terms/synonyms
+2. Chronic kidney failure and its related terms/synonyms
+3. The negation of association terms like ""associated with"", ""related to"", etc.
+
+The query uses the AND operator to require the presence of both anemia and chronic kidney failure concepts, while the NOT operator excludes documents that mention an association between the two.
+
+However, it's important to note that negation in search queries can be challenging. This query may exclude documents that discuss the lack of association between anemia and chronic kidney failure, as the negation terms would still be present. The ideal results would be documents that discuss anemia and chronic kidney failure but do not mention an association between them.
+
+Depending on the specific use case, it may be better to search for the two concepts separately and then filter out or down-rank results that mention an association. Let me know if you would like me to modify the query further.","{'query': {'query_string': {'query': '(anemia OR ""low hemoglobin"" OR ""low hematocrit"" OR ""low red blood cell count"") AND (""chronic kidney failure"" OR ""chronic renal failure"" OR ""end-stage renal disease"" OR ESRD OR ""chronic kidney disease"" OR CKD OR ""chronic kidney insufficiency"" OR ""chronic renal insufficiency"") AND (NOT (""associated with"" OR ""related to"" OR ""linked to"" OR ""correlated with"" OR ""caused by""))'}}, 'size': 50}",,"['32499002', '24402094', '18434712', '16893404', '1564606', '22034760', '9762381', '20980739', '15875275', '22199043', '25864164', '32769931', '18788410', '21290916', '21116711', '34812298', '20349416', '12481145', '28744467', '1185335', '21541213', '16336582', '33025407', '24589911', '28386819', '33911845', '7259844', '19809999', '9925157', '29624739', '2010480', '9277860', '3900528', '3392887', '24743961', '26903696', '28869934', '9925152', '2718284', '24344917', '24564605', '2051730', '1306073', '25518581', '19141655', '7342514', '22122666', '1563119', '15976508', '16538930']",[],[],[],0.0,0.0,0.0
+6415bc8d690f196b5100000f,What is the estimated reduction in time when using online genetic counseling?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What is the estimated reduction in time when using online genetic counseling?"":
+
+##
+(""online genetic counseling"" OR ""virtual genetic counseling"" OR ""telemedicine genetic counseling"" OR ""telegenetic counseling"") AND (""time reduction"" OR ""time savings"" OR ""reduced time"" OR ""shorter time"" OR ""faster"" OR ""quicker"") AND (estimated OR estimate OR estimation OR approximated OR approximate OR approximation)
+##
+
+The key components are:
+1. ""Online genetic counseling"" and synonyms like ""virtual genetic counseling"", ""telemedicine genetic counseling"", ""telegenetic counseling""
+2. Terms related to reduction in time like ""time reduction"", ""time savings"", ""reduced time"", ""shorter time"", ""faster"", ""quicker""
+3. Terms related to estimation like estimated, estimate, approximated, approximate
+
+The query aims to find documents that mention online/virtual genetic counseling along with language about reduction in time or duration, as well as some estimation or approximation of that time savings. The synonyms help capture various ways these concepts could be expressed.
+
+However, the query is relatively broad since the question is asking for a specific quantitative estimate that may not be consistently reported in the literature. The results may need to be manually reviewed to find a precise numerical estimate of time reduction.
+
+Let me know if you would like me to modify or expand the query further. I tried to balance capturing the key concepts while not overly limiting the results, given the specificity of the information requested.","{'query': {'query_string': {'query': '(""online genetic counseling"" OR ""virtual genetic counseling"" OR ""telemedicine genetic counseling"" OR ""telegenetic counseling"") AND (""time reduction"" OR ""time savings"" OR ""reduced time"" OR ""shorter time"" OR ""faster"" OR ""quicker"") AND (estimated OR estimate OR estimation OR approximated OR approximate OR approximation)'}}, 'size': 50}",,['26785833'],[],[],[],1.0,1.0,1.0
+64163660690f196b5100001d,Is deflazacort more efficient than prednisone/prednisolone for the treatment of Duchenne muscular dystrophy?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is deflazacort more efficient than prednisone/prednisolone for the treatment of Duchenne muscular dystrophy?"":
+
+##
+(deflazacort AND (prednisone OR prednisolone)) AND (""duchenne muscular dystrophy"" OR DMD) AND (treatment OR therapy OR ""management"") AND (efficacy OR effectiveness OR efficiency OR ""comparative effectiveness"" OR ""head-to-head"" OR ""clinical outcomes"" OR ""patient outcomes"")
+##
+
+The key components are:
+
+1. The drugs being compared: deflazacort, prednisone, prednisolone
+2. The disease: Duchenne muscular dystrophy and its acronym DMD
+3. Treatment-related terms: treatment, therapy, management
+4. Comparison and efficacy terms: efficacy, effectiveness, efficiency, comparative effectiveness, head-to-head, clinical outcomes, patient outcomes
+
+The query aims to find documents that mention both deflazacort and prednisone/prednisolone in the context of DMD treatment, and that discuss their comparative efficacy or efficiency. The synonyms and related terms help capture different ways these concepts may be expressed.
+
+The AND operators ensure all the key concepts are present, while the OR operators allow for variations in terminology. The query is relatively targeted since it focuses on a specific comparison for a particular disease.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(deflazacort AND (prednisone OR prednisolone)) AND (""duchenne muscular dystrophy"" OR DMD) AND (treatment OR therapy OR ""management"") AND (efficacy OR effectiveness OR efficiency OR ""comparative effectiveness"" OR ""head-to-head"" OR ""clinical outcomes"" OR ""patient outcomes"")'}}, 'size': 50}",,"['22655511', '34440496', '19488064', '37927274', '18334131', '37819629', '27149418', '23137739', '36168943', '31508685', '36565131', '35381069', '1822804', '35713895', '33075081', '22115006', '25959722', '12026233', '30167630', '31830002', '16244521', '28450193', '18254031', '33053810', '17541998', '27566742', '23483575', '20581335', '8882570', '24010700', '10951436', '27039228', '33910603', '15106215', '26833937', '26311750', '33204350', '11929208', '23622373', '11038071', '15990951', '26358775', '22967789', '32956407', '14996877', '27500011', '29174484', '31046703', '27746500']",[],[],[],0.1,0.2,0.13333333333333333
+6402bc2d201352f04a000005,What are the targets of Mosunetuzumab?,list,,"Here is my attempt at an Elasticsearch query string for the question ""What are the targets of Mosunetuzumab?"":
+
+##
+(mosunetuzumab OR ""BTCT4465A"" OR ""RG7828"") AND (target OR targets OR targeting OR ""mechanism of action"" OR ""mode of action"") AND (""CD20"" OR ""MS4A1"" OR ""membrane-spanning 4-domains subfamily A member 1"") AND (""CD3"" OR ""T-cell co-receptor"")
+##
+
+The key components are:
+
+1. Mosunetuzumab and its alternate names/codes BTCT4465A and RG7828. This ensures we find documents specifically about this drug.
+
+2. General terms related to drug targets and mechanism of action. This casts a wide net for potentially relevant information.
+
+3. Specific known targets of mosunetuzumab:
+   - CD20 (also known as MS4A1 or membrane-spanning 4-domains subfamily A member 1) 
+   - CD3 (also referred to as T-cell co-receptor)
+   
+   Including these specific targets helps hone in on the most relevant information while allowing for some variability in terminology.
+
+The query aims to find documents that discuss the targets or mechanism of action of mosunetuzumab, with an emphasis on its known targets CD20 and CD3. The AND operators ensure all key concepts are present.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(mosunetuzumab OR ""BTCT4465A"" OR ""RG7828"") AND (target OR targets OR targeting OR ""mechanism of action"" OR ""mode of action"") AND (""CD20"" OR ""MS4A1"" OR ""membrane-spanning 4-domains subfamily A member 1"") AND (""CD3"" OR ""T-cell co-receptor"")'}}, 'size': 50}",,"['37645778', '29351372', '38050329', '38031804', '37501154', '34922844', '34914545', '35182296', '37488074']",[],[],[],0.1111111111111111,0.25,0.15384615384615383
+64144200201352f04a000043,Is anaphylaxis a results of mast cell activation?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is anaphylaxis a result of mast cell activation?"":
+
+##
+(anaphylaxis OR ""anaphylactic reaction"" OR ""anaphylactic shock"") AND (""mast cell"" OR ""mast cells"") AND (activation OR degranulation OR ""release of mediators"")
+##
+
+The query focuses on the key concepts:
+1. Anaphylaxis and its synonyms ""anaphylactic reaction"" and ""anaphylactic shock""
+2. Mast cells, both singular and plural forms
+3. Activation of mast cells, including the specific term ""degranulation"" and the phrase ""release of mediators"" which describes the result of mast cell activation
+
+The AND operators ensure that all three main concepts are present in the search results. The query is relatively focused, as the question is asking about a specific relationship between two entities (anaphylaxis and mast cell activation). The synonyms and related terms aim to capture different ways the concepts might be expressed, without introducing tangential terms that could reduce precision.
+
+Let me know if you would like me to modify or expand the query further. The goal is to find documents that discuss whether anaphylaxis is caused by the activation of mast cells.","{'query': {'query_string': {'query': '(anaphylaxis OR ""anaphylactic reaction"" OR ""anaphylactic shock"") AND (""mast cell"" OR ""mast cells"") AND (activation OR degranulation OR ""release of mediators"")'}}, 'size': 50}",,"['22145857', '9324065', '10333112', '16204934', '19506243', '30566890', '30856392', '22022171', '31011586', '16204936', '89807', '29434182', '2099348', '20194630', '9805235', '7691234', '22261360', '33990023', '17546203', '25780280', '33097573', '8732049', '18468822', '14996419', '15025392', '28282470', '12419650', '20620227', '9728749', '18596587', '11457897', '69052', '16804320', '21134573', '22110295', '10794118', '30776022', '26936360', '10726327', '33524790', '7061153', '7295137', '33275825', '30909706', '2479221', '7154669', '28987593', '32712042', '10088645', '4046903']",[],[],[],0.1,0.03571428571428571,0.05263157894736841
+6415c6b6690f196b51000015,On which two clinical trials was the approval of Keytruda based?,list,,"Here is my attempt at an Elasticsearch query string for the question ""On which two clinical trials was the approval of Keytruda based?"":
+
+##
+(""Keytruda"" OR pembrolizumab) AND (approval OR approved OR ""FDA approval"") AND (""clinical trials"" OR ""clinical studies"") AND (KEYNOTE-158 OR KEYNOTE-164 OR KEYNOTE-028 OR KEYNOTE-012 OR KEYNOTE-087 OR KEYNOTE-013 OR KEYNOTE-024 OR KEYNOTE-010 OR KEYNOTE-001)
+##
+
+The key components are:
+- Keytruda and its generic name pembrolizumab
+- Terms related to drug approval like ""approval"", ""approved"", ""FDA approval""
+- ""clinical trials"" and the synonym ""clinical studies""
+- The names of several specific Keytruda clinical trials, such as KEYNOTE-158, KEYNOTE-164, etc. These are some of the most well-known Keytruda trials that may have been pivotal for its approval.
+
+The query aims to find documents that mention Keytruda's approval in connection with specific clinical trials. Including the names of several major trials improves the chances of finding the two that the approval was based on, while still keeping the query focused.
+
+I chose not to include more general terms related to cancer or Keytruda's mechanism of action, as the question is specifically about the clinical trials leading to approval. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""Keytruda"" OR pembrolizumab) AND (approval OR approved OR ""FDA approval"") AND (""clinical trials"" OR ""clinical studies"") AND (KEYNOTE-158 OR KEYNOTE-164 OR KEYNOTE-028 OR KEYNOTE-012 OR KEYNOTE-087 OR KEYNOTE-013 OR KEYNOTE-024 OR KEYNOTE-010 OR KEYNOTE-001)'}}, 'size': 50}",,"['33469803', '33673374', '35323331', '30839322', '30774597', '32190777', '31549317', '36601913', '36010854', '31412001', '32642293', '31940998', '33239737', '35721387', '28585617', '36226060', '37504344', '36724413', '32489505', '33222057', '29556919', '33804850', '34974985', '35762248', '35143542', '32801888', '26831889', '29079131', '32190776', '28688973', '33103788', '31869751', '33199494', '35371084', '32740092', '33839603', '36047845', '35641205', '35413489', '36369389', '36741713', '33956130', '32854979', '33012593', '37637511', '35515356', '31683169', '28125365', '28493171', '35205802']",[],[],[],0.0,0.0,0.0
+64178e34690f196b51000021,Is viltolarsen effective for the treatment of Duchenne muscular dystrophy?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is viltolarsen effective for the treatment of Duchenne muscular dystrophy?"":
+
+##
+(viltolarsen OR ""NS-065/NCNP-01"") AND (""duchenne muscular dystrophy"" OR DMD OR ""duchenne's muscular dystrophy"") AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical outcome"" OR ""therapeutic effect"")
+##
+
+The key components are:
+
+1. Viltolarsen and its research code name NS-065/NCNP-01
+2. Duchenne muscular dystrophy and its common acronym DMD
+3. Terms related to treatment effectiveness like effective, efficacy, ""treatment outcome"", ""therapeutic effect""
+
+The query aims to find documents that mention viltolarsen along with DMD and discuss the drug's effectiveness or treatment outcomes. Including the research code name expands recall, while focusing on effectiveness-related terms helps keep the results relevant to the question of whether viltolarsen is an effective treatment.
+
+The query is relatively targeted since it includes a specific drug and disease, but the synonyms and related terms allow for some variability in how the concepts might be expressed. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(viltolarsen OR ""NS-065/NCNP-01"") AND (""duchenne muscular dystrophy"" OR DMD OR ""duchenne\'s muscular dystrophy"") AND (effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical outcome"" OR ""therapeutic effect"")'}}, 'size': 50}",,"['32955503', '30388618', '31992520', '37194523', '35634851', '32483212', '33285037', '37572081', '37005891', '32453377', '36401026', '35213020', '36995605', '34092651', '34097287', '37955093', '37955094']",[],[],[],0.2,0.6666666666666666,0.30769230769230765
+640410d1201352f04a000012,What is Wilkie's syndrome?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is Wilkie's syndrome?"":
+
+##
+(""wilkie's syndrome"" OR ""wilkies syndrome"" OR ""wilkie syndrome"" OR ""superior mesenteric artery syndrome"" OR ""smas"" OR ""cast syndrome"" OR ""arteriomesenteric duodenal compression syndrome"" OR ""aortomesenteric duodenal compression"") AND (definition OR description OR characteristics OR ""clinical features"" OR symptoms OR pathophysiology OR causes OR etiology)
+##
+
+The key components are:
+1. Wilkie's syndrome and its various synonyms, including ""superior mesenteric artery syndrome"", ""SMAS"", ""cast syndrome"", ""arteriomesenteric duodenal compression syndrome"", and ""aortomesenteric duodenal compression"". This ensures the query captures the main entity regardless of the specific term used.
+
+2. Terms related to defining or describing a medical condition, such as ""definition"", ""description"", ""characteristics"", ""clinical features"", ""symptoms"", ""pathophysiology"", ""causes"", and ""etiology"". This helps retrieve documents that explain what Wilkie's syndrome is.
+
+The query aims to find documents that mention Wilkie's syndrome or one of its synonyms along with language related to defining or explaining a medical condition. The synonyms help improve recall by accounting for variations in terminology, while the definition-related terms help keep the results focused on documents that actually explain what the syndrome is. The AND operator ensures both the entity and the explanatory terms are present.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""wilkie\'s syndrome"" OR ""wilkies syndrome"" OR ""wilkie syndrome"" OR ""superior mesenteric artery syndrome"" OR ""smas"" OR ""cast syndrome"" OR ""arteriomesenteric duodenal compression syndrome"" OR ""aortomesenteric duodenal compression"") AND (definition OR description OR characteristics OR ""clinical features"" OR symptoms OR pathophysiology OR causes OR etiology)'}}, 'size': 50}",,"['35496747', '19388563', '12574933', '19028659', '10210938', '35304355', '21365426', '19833010', '37383896', '32399444', '32116320', '28031660', '33083170', '16968185', '29204239', '29673098', '26120301', '28433048', '18828443', '16707974', '26969279', '26769525', '35475250', '19660228', '28100055', '34401041', '29479421', '28481073', '31886059', '32821627', '33631645', '8857992', '23959808', '28688313', '27385294', '19107311', '18419824', '37568225', '35967155', '12066430', '37180628', '18687762', '31763105', '24240069', '36107595', '21892587', '37250817', '30674275', '17575776', '35211606']",[],[],[],0.1,0.16666666666666666,0.125
+641461bb201352f04a000046,What is a PROTAC?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is a PROTAC?"":
+
+##
+(""PROTAC"" OR ""PROTACs"" OR ""proteolysis targeting chimera""~2 OR ""proteolysis-targeting chimera""~2) AND 
+(definition OR ""defined as"" OR ""refer to"" OR ""known as"" OR ""described as"" OR ""called"") AND
+(""protein degradation"" OR ""targeted protein degradation"" OR ""induce protein degradation""~3 OR ""inducing degradation""~2 OR ""ubiquitin-proteasome system"" OR ""E3 ubiquitin ligase"")
+##
+
+The key components are:
+
+1. PROTAC and its plural form, along with the full term ""proteolysis targeting chimera"" (allowing for minor variations using fuzzy matching ~2). This ensures we find documents specifically about PROTACs.
+
+2. Definition-related terms like ""defined as"", ""known as"", ""described as"", etc. This helps find sentences or passages that explicitly define or explain what a PROTAC is.
+
+3. Terms related to PROTACs' function and mechanism, such as inducing targeted protein degradation via the ubiquitin-proteasome system and E3 ubiquitin ligases. This helps find explanations of what PROTACs are and how they work.
+
+The query aims to find the most relevant definitions or descriptions of PROTACs by focusing on the key term and its mechanism of action, while allowing for some variability in phrasing. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""PROTAC"" OR ""PROTACs"" OR ""proteolysis targeting chimera""~2 OR ""proteolysis-targeting chimera""~2) AND (definition OR ""defined as"" OR ""refer to"" OR ""known as"" OR ""described as"" OR ""called"") AND(""protein degradation"" OR ""targeted protein degradation"" OR ""induce protein degradation""~3 OR ""inducing degradation""~2 OR ""ubiquitin-proteasome system"" OR ""E3 ubiquitin ligase"")'}}, 'size': 50}",,"['31004963', '31873151', '33783207', '37805842', '37422908', '29018234', '37119667', '38015747', '34494353', '18752944', '33334221', '29129716', '33488967', '28263557', '31200864', '31955850', '34432240', '36557960', '32338867', '37920397', '36255625', '37261210', '28378579', '36733714', '36750097', '35792307', '37670499', '37898394', '32718354', '35649410', '36542856', '37866632', '33143537', '36764755', '37817340', '37845222', '33532735', '35954440', '38071084', '33339292', '37577590', '34432244', '35978859', '34838332', '36170674', '36692137', '36410083', '37745578', '37696366', '36942064']",[],[],[],0.2,0.06666666666666667,0.1
+6410f839201352f04a000032,Can the concept of digital twins be applied in Precision Nutrition?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Can the concept of digital twins be applied in Precision Nutrition?"":
+
+##
+(""digital twin"" OR ""digital twins"" OR ""virtual model"" OR ""virtual representation"" OR ""in silico model"") AND (""precision nutrition"" OR ""personalized nutrition"" OR ""individualized nutrition"" OR ""tailored nutrition"") AND (applied OR application OR applications OR ""use case"" OR ""use cases"" OR implement*)
+##
+
+The key components are:
+
+1. ""digital twin"" and related terms like ""virtual model"", ""virtual representation"", ""in silico model"". This captures the core concept and allows for variations in terminology.
+
+2. ""precision nutrition"" and synonyms like ""personalized nutrition"", ""individualized nutrition"", ""tailored nutrition"". This focuses on the specific domain of application.
+
+3. Terms related to applying or implementing a concept, like applied, application(s), ""use case(s)"", and implement*. The wildcard * allows for variations like ""implementation"" or ""implementing"".
+
+The AND operators ensure all three main concepts (digital twins, precision nutrition, application) are present, while the OR operators within each concept allow for flexibility in terminology.
+
+The query aims to find documents discussing the application or potential use cases of digital twins specifically in the context of precision nutrition. It balances precision by focusing on the key concepts, while improving recall through the use of synonyms and related terms.","{'query': {'query_string': {'query': '(""digital twin"" OR ""digital twins"" OR ""virtual model"" OR ""virtual representation"" OR ""in silico model"") AND (""precision nutrition"" OR ""personalized nutrition"" OR ""individualized nutrition"" OR ""tailored nutrition"") AND (applied OR application OR applications OR ""use case"" OR ""use cases"" OR implement*)'}}, 'size': 50}",,['35776947'],[],[],[],0.0,0.0,0.0
+63eef6edf36125a42600000d,What is the mechanism of action of Teclistamab?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is the mechanism of action of Teclistamab?"":
+
+##
+(""teclistamab"" OR ""JNJ-64007957"" OR ""JNJ 64007957"" OR ""JNJ64007957"") AND 
+(""mechanism of action"" OR ""mode of action"" OR ""mechanism"" OR ""action"" OR ""pharmacodynamics"" OR ""activity"" OR ""function"") AND
+(""bispecific antibody"" OR ""dual-specific antibody"" OR ""anti-BCMA/CD3"" OR ""BCMA x CD3"" OR ""B-cell maturation antigen"" OR ""BCMA"" OR ""CD3"")
+##
+
+The key components are:
+
+1. Teclistamab and its synonyms/alternate names. This ensures we find documents specifically about this drug.
+
+2. General terms related to mechanism of action like ""mode of action"", pharmacodynamics, activity, function, etc. This casts a wide net for potentially relevant information.
+
+3. Specific terms related to teclistamab's known mechanism of action as a bispecific antibody targeting BCMA and CD3. This helps hone in on the precise MOA while allowing for some variability in terminology.
+
+The query aims to balance finding as much relevant information as possible about teclistamab's MOA while not being too broad or introducing irrelevant terms. The AND operators ensure all the main concepts (drug, MOA, specific targets) are present.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""teclistamab"" OR ""JNJ-64007957"" OR ""JNJ 64007957"" OR ""JNJ64007957"") AND (""mechanism of action"" OR ""mode of action"" OR ""mechanism"" OR ""action"" OR ""pharmacodynamics"" OR ""activity"" OR ""function"") AND(""bispecific antibody"" OR ""dual-specific antibody"" OR ""anti-BCMA/CD3"" OR ""BCMA x CD3"" OR ""B-cell maturation antigen"" OR ""BCMA"" OR ""CD3"")'}}, 'size': 50}",,"['32956453', '33227097', '36775940', '37878808', '36875718', '37848191', '38052042', '37509726', '34388396', '37009408', '34417227', '37328635', '37960969', '37913909', '37501154', '38052709', '37111346', '36980705', '36472472', '37852928']",[],[],[],0.0,0.0,0.0
+640c8309201352f04a000024,The diagnosis of cholestasis is based on the elevations seen in what liver function tests?,list,,"Here is my attempt at an Elasticsearch query string for the question ""The diagnosis of cholestasis is based on the elevations seen in what liver function tests?"":
+
+##
+(cholestasis OR ""bile stasis"" OR ""biliary stasis"" OR ""biliary obstruction"") AND (diagnos* OR detect*) AND (""liver function tests"" OR LFTs OR ""hepatic function tests"") AND (elevat* OR increas* OR high OR abnormal*) AND (bilirubin OR ""bile acids"" OR ""alkaline phosphatase"" OR ALP OR ""gamma-glutamyl transferase"" OR GGT OR ""5'-nucleotidase"" OR ""liver enzymes"")
+##
+
+The key components are:
+1. Cholestasis and related terms
+2. Diagnosis-related terms 
+3. ""Liver function tests"" and synonyms
+4. Terms related to elevation or abnormality
+5. Specific liver function tests that are commonly elevated in cholestasis, such as bilirubin, bile acids, alkaline phosphatase (ALP), gamma-glutamyl transferase (GGT), 5'-nucleotidase
+
+The query uses the AND operator to require all the main concepts, while the OR operator allows for variations in terminology within each concept. Wildcards (*) are used to capture different word endings.
+
+The query aims to find documents that discuss the diagnosis of cholestasis based on elevations in specific liver function tests. It includes the most relevant tests while avoiding overly broad terms. The focus is on precision for the specific question asked, but the synonyms and related terms help improve recall.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(cholestasis OR ""bile stasis"" OR ""biliary stasis"" OR ""biliary obstruction"") AND (diagnos* OR detect*) AND (""liver function tests"" OR LFTs OR ""hepatic function tests"") AND (elevat* OR increas* OR high OR abnormal*) AND (bilirubin OR ""bile acids"" OR ""alkaline phosphatase"" OR ALP OR ""gamma-glutamyl transferase"" OR GGT OR ""5\'-nucleotidase"" OR ""liver enzymes"")'}}, 'size': 50}",,"['24966712', '14535985', '36426309', '2372276', '896101', '531242', '27688573', '23342903', '33722595', '36185921', '33826952', '9758256', '36132201', '34479513', '28233754', '36958409', '33657042', '26109799', '35844336', '15977553', '1067029', '33896963', '2050326', '12854371', '34178548', '30688121', '38028400', '20203641', '24901263', '33489574', '34992033', '35778702', '16613706', '31106388', '20181214', '37763154', '15841422', '10385057', '28733732', '33603498', '29480924', '34817951', '27080614', '2152666', '25205698', '1537519', '9213259', '2841850', '26191344', '25153210']",[],[],[],0.0,0.0,0.0
+6415c599690f196b51000013,Which company produces Keytruda?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""Which company produces Keytruda?"":
+
+##
+(Keytruda OR pembrolizumab) AND (""produced by"" OR ""manufactured by"" OR ""made by"" OR ""developed by"" OR ""product of"" OR ""sold by"" OR ""marketed by"") AND (company OR manufacturer OR ""pharmaceutical company"" OR pharma OR ""drug company"")
+##
+
+The key components are:
+1. Keytruda and its generic name pembrolizumab, connected by OR
+2. Various phrases related to a company producing or selling a drug, connected by OR
+3. Terms for the concept of a company or drug manufacturer, connected by OR
+
+The query requires the drug name and at least one term each related to production and company, while allowing for variations in phrasing. This should help find relevant results about which company makes Keytruda, without introducing too many irrelevant terms.
+
+I focused on the core concepts of the drug name, the idea of production/manufacturing, and terms for a company, rather than including many synonyms, since the question is quite specific. The drug name is the most important term, so it is not wrapped in quotes, to allow for the best fuzzy matching.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(Keytruda OR pembrolizumab) AND (""produced by"" OR ""manufactured by"" OR ""made by"" OR ""developed by"" OR ""product of"" OR ""sold by"" OR ""marketed by"") AND (company OR manufacturer OR ""pharmaceutical company"" OR pharma OR ""drug company"")'}}, 'size': 50}",,"['28121547', '30547369', '30895564', '35378209', '31815178', '35900732', '30030817', '36097345', '31877721', '32272210', '34073680', '31528768', '28125365', '33517226', '30520000', '28293123', '35478498', '29848279', '29901568', '26068883', '30305940', '31121194', '29239195', '35890409', '31267201', '32209183', '34769970', '31610315', '31025831', '31301962']",[],[],[],0.0,0.0,0.0
+6414638c201352f04a000047,Cereblon (CRBN)  has been identified as the target for what type of drug?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""Cereblon (CRBN) has been identified as the target for what type of drug?"":
+
+##
+(""cereblon"" OR CRBN) AND (target OR binding OR ""mechanism of action"") AND (""type of drug"" OR ""class of drug"" OR ""drug class"" OR immunomodulatory OR IMiD OR ""immunomodulatory imide drug"" OR thalidomide OR lenalidomide OR pomalidomide)
+##
+
+The key components are:
+
+1. Cereblon and its abbreviation CRBN as the main protein target
+2. Terms related to drug targeting like ""target"", ""binding"", ""mechanism of action""
+3. Phrases related to drug categorization like ""type of drug"", ""class of drug"", ""drug class""
+4. Specific drug classes and examples known to target cereblon, including:
+   - Immunomodulatory drugs (IMiDs) 
+   - Thalidomide and its derivatives lenalidomide and pomalidomide
+
+The query aims to find documents that mention cereblon/CRBN as a drug target, along with language about the type or class of drug involved. It includes both general terms and specific examples to strike a balance between recall and precision.
+
+The AND operators ensure all the main concepts (cereblon, drug targeting, drug type/class) are present, while the OR operators allow for variations in terminology.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""cereblon"" OR CRBN) AND (target OR binding OR ""mechanism of action"") AND (""type of drug"" OR ""class of drug"" OR ""drug class"" OR immunomodulatory OR IMiD OR ""immunomodulatory imide drug"" OR thalidomide OR lenalidomide OR pomalidomide)'}}, 'size': 50}",,"['27478739', '21860026', '30373817', '37902300', '34572892', '22966948', '22552008', '25626321', '31187860', '27263779', '31597822', '28978850', '30118587', '25016816', '26231201', '32071327', '37238617', '30026574', '29870139', '29718735', '35045330', '31157769', '33938033', '30458989', '34834536', '25043012', '28205024', '25108355', '34764413', '34704527', '32955182', '26657848', '27294876', '29788898', '27460676', '24328678', '29130642', '30760870', '35831190', '29348877', '25978432', '34207079', '34583995', '30064974', '33310190', '30741931', '34553266', '36311747', '24914135', '36749666']",[],[],[],0.4,0.18181818181818182,0.25000000000000006
+64040edf201352f04a000011,"Based on clinical trial data, can pioglitazone delay cognitive impairment for people at risk for Alzheimer's disease?",yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Based on clinical trial data, can pioglitazone delay cognitive impairment for people at risk for Alzheimer's disease?"":
+
+##
+(pioglitazone AND (""clinical trial"" OR ""clinical study"" OR ""randomized controlled trial"" OR RCT) AND (""cognitive impairment"" OR ""cognitive decline"" OR ""cognitive dysfunction"") AND (""delay"" OR prevent OR postpone OR defer) AND (""Alzheimer's disease"" OR ""Alzheimer disease"" OR AD OR ""dementia risk"" OR ""at risk for Alzheimer's""~5))
+##
+
+The key components are:
+1. Pioglitazone - the main intervention 
+2. Clinical trial, clinical study, RCT - looking for evidence from clinical trials
+3. Cognitive impairment, decline, dysfunction - the outcome of interest
+4. Delay, prevent, postpone, defer - the effect on the outcome
+5. Alzheimer's disease and related terms - the population at risk
+
+The query aims to find documents that discuss clinical trial evidence for whether pioglitazone can delay cognitive impairment in people at risk for Alzheimer's. The proximity search ""at risk for Alzheimer's""~5 allows for some variability in how that concept is expressed.
+
+The AND operators ensure all the key concepts are present, while the synonyms and related terms help capture variations in terminology. The query is fairly targeted while still allowing for some flexibility.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(pioglitazone AND (""clinical trial"" OR ""clinical study"" OR ""randomized controlled trial"" OR RCT) AND (""cognitive impairment"" OR ""cognitive decline"" OR ""cognitive dysfunction"") AND (""delay"" OR prevent OR postpone OR defer) AND (""Alzheimer\'s disease"" OR ""Alzheimer disease"" OR AD OR ""dementia risk"" OR ""at risk for Alzheimer\'s""~5))'}}, 'size': 50}",,"['34220427', '31720367', '37927258', '23249780', '36281666', '37874111']",[],[],[],0.0,0.0,0.0
+63f9cdb033942b094c000012,Does silencing of SRRM4 promote microexon inclusion?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Does silencing of SRRM4 promote microexon inclusion?"":
+
+##
+(""SRRM4"" OR ""Serine/Arginine Repetitive Matrix 4"") AND (silencing OR knockdown OR ""knock-down"" OR ""knock down"" OR inhibition OR suppression) AND (microexon OR ""micro-exon"" OR ""micro exon"") AND (inclusion OR splicing OR ""exon inclusion"" OR ""inclusion of microexons"")
+##
+
+The key components are:
+1. SRRM4 gene and its full name
+2. Silencing and related terms like knockdown, inhibition, suppression
+3. Microexon and variations of the term
+4. Inclusion and related terms like splicing, ""exon inclusion"", ""inclusion of microexons""
+
+The query aims to find documents that mention the silencing of SRRM4 in relation to microexon inclusion. It includes synonyms and related terms to capture different ways the concepts might be expressed, but avoids overly broad terms that could reduce precision.
+
+The AND operators ensure that all the key concepts are present, which is important for this specific question. The double quotes around multi-word terms enforce exact phrase matching.
+
+Let me know if you would like me to modify or expand the query further. The current query prioritizes precision while still allowing for some variability in terminology.","{'query': {'query_string': {'query': '(""SRRM4"" OR ""Serine/Arginine Repetitive Matrix 4"") AND (silencing OR knockdown OR ""knock-down"" OR ""knock down"" OR inhibition OR suppression) AND (microexon OR ""micro-exon"" OR ""micro exon"") AND (inclusion OR splicing OR ""exon inclusion"" OR ""inclusion of microexons"")'}}, 'size': 50}",,"['33621242', '28106138']",[],[],[],0.0,0.0,0.0
+63f03a20f36125a42600001c,Which drugs are included in the AZD7442?,list,,"Here is my attempt at an Elasticsearch query string for the question ""Which drugs are included in the AZD7442?"":
+
+##
+(""AZD7442"" OR ""AZD 7442"" OR ""Evusheld"" OR ""tixagevimab"" OR ""cilgavimab"") AND (""includes"" OR ""consists of"" OR ""contains"" OR ""comprised of"" OR ""composed of"") AND (""drugs"" OR ""antibodies"" OR ""monoclonal antibodies"" OR ""components"" OR ""ingredients"")
+##
+
+The key components are:
+1. AZD7442 and its synonyms/related terms like the brand name Evusheld and the individual monoclonal antibodies tixagevimab and cilgavimab that make up the combination. This ensures we find documents specifically about AZD7442.
+
+2. Terms related to the concept of inclusion or composition, like ""includes"", ""consists of"", ""contains"", etc. This helps find information about what drugs or components are part of AZD7442.
+
+3. Terms for the included components like ""drugs"", ""antibodies"", ""monoclonal antibodies"", ""components"", ""ingredients"". This casts a wide net for the types of things that could be included in the combination.
+
+The query aims to find documents that discuss the specific drugs or antibodies that are included in or make up the AZD7442 combination. It includes both the high-level AZD7442 term and the specific component antibodies. The synonyms and related terms help improve recall while still keeping the query focused on the key entities and concepts.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""AZD7442"" OR ""AZD 7442"" OR ""Evusheld"" OR ""tixagevimab"" OR ""cilgavimab"") AND (""includes"" OR ""consists of"" OR ""contains"" OR ""comprised of"" OR ""composed of"") AND (""drugs"" OR ""antibodies"" OR ""monoclonal antibodies"" OR ""components"" OR ""ingredients"")'}}, 'size': 50}",,"['35797235', '37524201', '36683419', '37914983', '36851227', '35926762', '35443106', '36617704', '36450283', '36730033', '37167146', '37954618', '36649625', '36680160', '37664578', '36632574', '37718610', '37661468', '36464214', '37006158', '37167118', '35817072', '36403203', '37099295', '35661563', '36126256', '37996072', '36731147', '36472472', '37359781', '36298832', '36788246', '37318043', '35713300', '35215983', '36415455', '35876174', '37839812', '36354253', '36202799', '37632774', '37534815', '37498399', '35906963', '37129306', '36362912', '35811461', '35718306', '36660525', '37550690']",[],[],[],0.0,0.0,0.0
+640ddd9d201352f04a000028,What were the first 2 PD-1 inhibitors approved by the FDA in 2014?,list,,"Here is my attempt at an Elasticsearch query string for the question ""What were the first 2 PD-1 inhibitors approved by the FDA in 2014?"":
+
+##
+(""PD-1 inhibitors"" OR ""PD-1 checkpoint inhibitors"" OR ""programmed cell death protein 1 inhibitors"" OR ""anti-PD-1 antibodies"" OR ""anti-PD-1 agents"" OR ""anti-PD-1 drugs"") AND (first OR 1st OR ""first two"" OR ""first 2"" OR initial OR pioneering) AND (approved OR approval OR ""FDA approval"" OR ""approved by the FDA"" OR ""approved by FDA"") AND (2014)
+##
+
+The key components are:
+1. PD-1 inhibitors and related terms/synonyms
+2. Concept of ""first"" or ""initial"" 
+3. FDA approval
+4. The specific year 2014
+
+The query aims to find documents that mention the first or initial PD-1 inhibitors that received FDA approval, specifically in the year 2014. The synonyms for PD-1 inhibitors help capture various ways the drugs may be referred to. Including the approval concept and the specific year helps narrow down to the most relevant results.
+
+I avoided including the names of specific PD-1 inhibitors, as the question is asking what those first two approved agents were, so we likely don't want to assume the answer in the query itself.
+
+Let me know if you would like me to modify or expand the query further. The current query aims for a balance of recall and precision for the specific question asked.","{'query': {'query_string': {'query': '(""PD-1 inhibitors"" OR ""PD-1 checkpoint inhibitors"" OR ""programmed cell death protein 1 inhibitors"" OR ""anti-PD-1 antibodies"" OR ""anti-PD-1 agents"" OR ""anti-PD-1 drugs"") AND (first OR 1st OR ""first two"" OR ""first 2"" OR initial OR pioneering) AND (approved OR approval OR ""FDA approval"" OR ""approved by the FDA"" OR ""approved by FDA"") AND (2014)'}}, 'size': 50}",,"['30196908', '29357948', '33804850', '26426764', '27023060', '30231333', '25549844', '28639409', '25965361', '28883282', '27716999', '32404731', '35851153', '32414861']",[],[],[],0.1,0.1,0.10000000000000002
+6414c4cf690f196b51000006,What is the difference between dermatillomania and skin picking disorder?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What is the difference between dermatillomania and skin picking disorder?"":
+
+##
+(""dermatillomania"" OR ""excoriation disorder"" OR ""skin-picking disorder"" OR ""skin picking disorder"" OR SPD) AND (difference OR differences OR comparison OR distinguish OR ""distinguished from"" OR ""compared to"" OR ""in contrast to"")
+##
+
+The key components are:
+1. Dermatillomania and its synonyms like ""excoriation disorder"", ""skin-picking disorder"", ""skin picking disorder"", and the abbreviation SPD. This covers the main terms for the condition.
+
+2. Terms related to differences and comparisons like ""difference"", ""comparison"", ""distinguish"", ""in contrast to"", etc. This captures the concept of comparing or contrasting the two terms.
+
+I did not include many additional synonyms because dermatillomania and skin picking disorder are the main terms used for this condition, and adding more general terms could reduce the precision of the results. The query aims to find documents that discuss the difference or relationship between the terms dermatillomania and skin picking disorder specifically.
+
+Let me know if you would like me to modify or expand the query further. The goal is to balance finding relevant information while still focusing on the specific comparison asked about in the question.","{'query': {'query_string': {'query': '(""dermatillomania"" OR ""excoriation disorder"" OR ""skin-picking disorder"" OR ""skin picking disorder"" OR SPD) AND (difference OR differences OR comparison OR distinguish OR ""distinguished from"" OR ""compared to"" OR ""in contrast to"")'}}, 'size': 50}",,"['32781374', '37074974', '36716064', '28063396', '35166660', '29934941', '34730081', '35183617', '31777356', '23123103', '37023597', '34613556', '26070103', '30654305', '29685064', '29305750', '28360794', '35634801', '26872117', '25435313', '34410609', '23303052', '27285390', '29727807', '28918268', '29781449', '25682319', '31232909', '29730999', '36451359', '33860536', '29218753', '35803169', '34392506', '33172654', '33395591', '33937998', '35682303', '23145386', '30892151', '36398062', '26159604', '27007062', '33882867', '36842397', '37206477', '36683012', '27639125', '27490833', '32401873']",[],[],[],0.0,0.0,0.0
+640dde93201352f04a000029,What is the difference between PD-1 and PD-L1?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is the difference between PD-1 and PD-L1?"":
+
+##
+(""PD-1"" OR ""programmed cell death protein 1"" OR ""programmed death-1"" OR ""CD279"") AND 
+(""PD-L1"" OR ""programmed death-ligand 1"" OR ""CD274"" OR ""B7-H1"") AND
+(difference OR differences OR comparison OR distinguish OR ""in contrast"" OR ""as opposed to"")
+##
+
+The key components are:
+
+1. PD-1 and its synonyms: ""programmed cell death protein 1"", ""programmed death-1"", ""CD279""
+2. PD-L1 and its synonyms: ""programmed death-ligand 1"", ""CD274"", ""B7-H1""
+3. Terms related to comparing or contrasting: difference, comparison, distinguish, ""in contrast"", ""as opposed to""
+
+The query requires both PD-1 and PD-L1 to be present along with some language about differences or comparisons. The synonyms help capture various ways these proteins may be referred to in the literature.
+
+I focused on the key entities and the concept of comparing them, without introducing too many tangential terms that could dilute the results. The query aims to find documents that specifically discuss the differences between PD-1 and PD-L1.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""PD-1"" OR ""programmed cell death protein 1"" OR ""programmed death-1"" OR ""CD279"") AND (""PD-L1"" OR ""programmed death-ligand 1"" OR ""CD274"" OR ""B7-H1"") AND(difference OR differences OR comparison OR distinguish OR ""in contrast"" OR ""as opposed to"")'}}, 'size': 50}",,"['31681606', '24175978', '34081342', '29337305', '36289665', '26501438', '25428504', '16517716', '34065396', '34675601', '12893276', '30400941', '37496925', '28122590', '31882544', '26101718', '35955729', '30687086', '30387047', '23924497', '36775813', '18825752', '34419685', '34656305', '33842618', '12421930', '28058043', '29910803', '29394125', '18759926', '27120796', '27213372', '37290119', '26004934', '33680705', '37716115', '27721577', '36268880', '33079077', '26798583', '25098287', '34367478', '36150452', '19759858', '18790673', '31200951', '27837027', '35665369', '32595775', '33058325']",[],[],[],0.0,0.0,0.0
+63eefa3bf36125a426000012,What causes Japanese Spotted Fever?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What causes Japanese Spotted Fever?"":
+
+##
+(""Japanese spotted fever"" OR ""Rickettsia japonica infection"") AND (cause OR causes OR causative OR etiology OR etiologic OR pathogen OR ""transmitted by"") AND (""Rickettsia japonica"" OR ""R. japonica"" OR ""Haemaphysalis longicornis"" OR ""H. longicornis"" OR ""Haemaphysalis flava"" OR ""H. flava"" OR ""Dermacentor taiwanensis"" OR ""D. taiwanensis"")
+##
+
+The key components are:
+1. The disease name ""Japanese spotted fever"" and its synonym ""Rickettsia japonica infection""
+2. Terms related to causation like cause, etiology, pathogen, ""transmitted by""
+3. The specific causative pathogen ""Rickettsia japonica"" and its abbreviation, as well as the tick vectors ""Haemaphysalis longicornis"", ""Haemaphysalis flava"", ""Dermacentor taiwanensis"" and their abbreviations
+
+The query aims to find documents that mention Japanese spotted fever along with language about what causes it, specifically the R. japonica pathogen and the ticks that transmit it to humans. Including the full species names as well as the abbreviated genus-species format helps capture variations in how they may be written.
+
+The query is relatively specific since it focuses on a particular disease and its known causes. The synonyms and related terms help improve recall while still maintaining relevance to the original question.","{'query': {'query_string': {'query': '(""Japanese spotted fever"" OR ""Rickettsia japonica infection"") AND (cause OR causes OR causative OR etiology OR etiologic OR pathogen OR ""transmitted by"") AND (""Rickettsia japonica"" OR ""R. japonica"" OR ""Haemaphysalis longicornis"" OR ""H. longicornis"" OR ""Haemaphysalis flava"" OR ""H. flava"" OR ""Dermacentor taiwanensis"" OR ""D. taiwanensis"")'}}, 'size': 50}",,"['33510192', '12037083', '26551325', '35507925', '8189407', '25298315', '31186196', '11376087', '32863353', '28057731', '23702338', '9204291', '12354906', '17314430', '24039725', '36716740', '33950539', '12373493', '29709963', '38043152', '36579736', '36386421', '33012734', '21668575', '34953052', '30728409', '22250454']",[],[],[],0.2,0.6666666666666666,0.30769230769230765
+6410f8b2201352f04a000033,What would be the benefits of using a virtual digital twin in nutrition?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What would be the benefits of using a virtual digital twin in nutrition?"":
+
+##
+(""virtual digital twin"" OR ""digital twin"" OR ""virtual twin"" OR ""in silico model"" OR ""computer model"" OR ""computational model"") AND (nutrition OR diet OR ""dietary intake"" OR ""food intake"" OR ""nutrient intake"") AND (benefits OR advantages OR ""positive effects"" OR ""favorable outcomes"" OR ""potential applications"")
+##
+
+The key components are:
+
+1. Virtual digital twin and related terms like ""digital twin"", ""virtual twin"", ""in silico model"", ""computer model"", ""computational model"". This captures the main technology concept.
+
+2. Nutrition and related terms like diet, dietary intake, food intake, nutrient intake. This focuses on the domain of application.
+
+3. Benefits and synonyms like advantages, positive effects, favorable outcomes, potential applications. This gets at the crux of what the question is asking about - the beneficial aspects or outcomes.
+
+The query uses the AND operator to require all three main concepts, while the OR operator within each concept allows for variations in terminology. The parentheses ensure the proper logical grouping.
+
+The query aims to strike a balance between finding potentially relevant information about the benefits of virtual twins in nutrition applications, while not being too broad or introducing irrelevant terms. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""virtual digital twin"" OR ""digital twin"" OR ""virtual twin"" OR ""in silico model"" OR ""computer model"" OR ""computational model"") AND (nutrition OR diet OR ""dietary intake"" OR ""food intake"" OR ""nutrient intake"") AND (benefits OR advantages OR ""positive effects"" OR ""favorable outcomes"" OR ""potential applications"")'}}, 'size': 50}",,"['8484455', '32975712', '32984662', '27130534', '1732653', '26858671', '11286419', '28725472', '33171760', '31218485', '30999841', '35604562', '34776010', '8042886', '32378341', '14503522', '28730384', '31366360', '36476869', '28448498', '34383741', '26123537', '37997794', '36645233', '17116722', '36591238', '21705144', '21929821', '26114575', '22401328', '33415115', '30646152']",[],[],[],0.0,0.0,0.0
+64040af9201352f04a00000d,Is levosimendan effective for amyotrophic lateral sclerosis?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is levosimendan effective for amyotrophic lateral sclerosis?"":
+
+##
+(levosimendan OR ""OR-1259"" OR ""OR 1259"" OR simdax) AND 
+(""amyotrophic lateral sclerosis"" OR ALS OR ""Lou Gehrig's disease"" OR ""motor neuron disease"" OR MND) AND
+(effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical outcome"" OR ""therapeutic effect"" OR benefit OR ""clinical benefit"" OR ""clinical efficacy"")
+##
+
+The key components are:
+
+1. Levosimendan and its synonyms/alternative names like the research code name OR-1259 and the brand name Simdax.
+
+2. Amyotrophic lateral sclerosis (ALS) and its synonyms like Lou Gehrig's disease and motor neuron disease (MND). This covers the main ways ALS is referred to.
+
+3. Terms related to effectiveness and treatment outcomes, such as efficacy, benefit, therapeutic effect, etc. This captures the concept of whether the drug is effective for treating the disease.
+
+The AND operators ensure all three main concepts (the drug, the disease, and effectiveness) are present in the search results. The query aims to balance finding potentially relevant information about levosimendan's effectiveness for ALS, while still being focused on the specific drug and disease combination. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(levosimendan OR ""OR-1259"" OR ""OR 1259"" OR simdax) AND (""amyotrophic lateral sclerosis"" OR ALS OR ""Lou Gehrig\'s disease"" OR ""motor neuron disease"" OR MND) AND(effective OR effectiveness OR efficacy OR ""treatment outcome"" OR ""clinical outcome"" OR ""therapeutic effect"" OR benefit OR ""clinical benefit"" OR ""clinical efficacy"")'}}, 'size': 50}",,"['32714567', '32639325', '31730560', '31315908', '34536404', '34376973', '17360979', '14527528', '12488124', '21107279', '227596', '20881769', '28923310', '22074274', '24387588', '30224017', '21047672', '17846338', '22067565']",[],[],[],0.2,1.0,0.33333333333333337
+63fa197c201352f04a000003,How does SRSF11 contribute to metastasis potential of colorectal cancer?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""How does SRSF11 contribute to metastasis potential of colorectal cancer?"":
+
+##
+(""SRSF11"" OR ""Serine/arginine-rich splicing factor 11"") AND 
+(""colorectal cancer"" OR ""colon cancer"" OR ""rectal cancer"" OR ""bowel cancer"" OR CRC) AND
+(metasta* OR ""metastatic potential"" OR ""metastatic ability"" OR ""metastasis potential"" OR ""metastatic capability"" OR ""metastatic capacity"") AND  
+(contribut* OR caus* OR lead* OR induc* OR promot* OR enhanc* OR increas* OR affect* OR influenc* OR regulat* OR ""play* a role"" OR ""is involved"")
+##
+
+The key components are:
+1. SRSF11 gene and its full name
+2. Colorectal cancer and its synonyms
+3. Metastasis potential and related terms, using wildcards to capture variations
+4. Contribution/causation terms, using wildcards to capture variations
+
+The query aims to find documents that discuss how SRSF11 contributes to or affects the metastatic potential specifically in the context of colorectal cancer. The synonyms and related terms help capture different ways these concepts may be expressed, while the wildcards allow for flexibility in word endings.
+
+The query is relatively targeted due to the specific gene and cancer type mentioned, but still allows for some variability in terminology. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""SRSF11"" OR ""Serine/arginine-rich splicing factor 11"") AND (""colorectal cancer"" OR ""colon cancer"" OR ""rectal cancer"" OR ""bowel cancer"" OR CRC) AND(metasta* OR ""metastatic potential"" OR ""metastatic ability"" OR ""metastasis potential"" OR ""metastatic capability"" OR ""metastatic capacity"") AND  (contribut* OR caus* OR lead* OR induc* OR promot* OR enhanc* OR increas* OR affect* OR influenc* OR regulat* OR ""play* a role"" OR ""is involved"")'}}, 'size': 50}",,['36394206'],[],[],[],1.0,1.0,1.0
+6414c0f7690f196b51000001,What are the clinical symptoms of an ornithine transcarbamylase deficiency?,list,,"Here is my attempt at an Elasticsearch query string for the question ""What are the clinical symptoms of an ornithine transcarbamylase deficiency?"":
+
+##
+(""ornithine transcarbamylase deficiency"" OR ""OTC deficiency"" OR ""OTCD"") AND 
+(""clinical symptoms"" OR ""clinical signs"" OR ""clinical manifestations"" OR ""clinical features"" OR ""clinical presentation"" OR phenotype OR ""signs and symptoms"") AND
+(hyperammonemia OR ""high ammonia"" OR ""elevated ammonia"" OR ""ammonia accumulation"" OR encephalopathy OR ""neurological symptoms"" OR ""intellectual disability"" OR ""developmental delay"" OR seizures OR lethargy OR vomiting OR ""respiratory alkalosis"" OR ""increased risk of infection"")
+##
+
+The key components are:
+
+1. The condition name ""ornithine transcarbamylase deficiency"" and its abbreviations ""OTC deficiency"" and ""OTCD"". This ensures the query is focused on the specific condition.
+
+2. Synonyms for ""clinical symptoms"" like ""clinical signs"", ""clinical manifestations"", ""clinical features"", ""clinical presentation"", phenotype, and ""signs and symptoms"". This captures various ways the symptoms may be referred to.
+
+3. Specific symptoms of OTC deficiency such as hyperammonemia, encephalopathy, neurological symptoms, intellectual disability, developmental delay, seizures, lethargy, vomiting, respiratory alkalosis, and increased risk of infection. Including these known symptoms should help retrieve highly relevant results.
+
+The query aims to find documents that discuss the clinical symptoms of OTC deficiency specifically. The synonyms and related terms help improve recall while the AND operators and specific symptoms help maintain precision. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""ornithine transcarbamylase deficiency"" OR ""OTC deficiency"" OR ""OTCD"") AND (""clinical symptoms"" OR ""clinical signs"" OR ""clinical manifestations"" OR ""clinical features"" OR ""clinical presentation"" OR phenotype OR ""signs and symptoms"") AND(hyperammonemia OR ""high ammonia"" OR ""elevated ammonia"" OR ""ammonia accumulation"" OR encephalopathy OR ""neurological symptoms"" OR ""intellectual disability"" OR ""developmental delay"" OR seizures OR lethargy OR vomiting OR ""respiratory alkalosis"" OR ""increased risk of infection"")'}}, 'size': 50}",,"['8857803', '23776342', '20570026', '3508674', '25994866', '12514690', '15280615', '2246687', '25573644', '25227973', '18651132', '25511598', '34670952', '37628367', '23430866', '20497355', '17210820', '30671162', '17209350', '36129623', '32934962', '18044746', '11902270', '8282523', '25026867', '37042609', '11216899', '12647200', '15289781', '36620389', '23640148', '14976564', '36362876', '23829977', '25011434', '23769969', '30223008', '37401903', '20406775', '28266016', '20004862', '21070677', '36128655', '24850570', '980551', '31415401', '3162766', '11773558', '16703326', '36620388']",[],[],[],0.0,0.0,0.0
+63eef60ef36125a42600000c,Olokizumab is tested for which disease?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""Olokizumab is tested for which disease?"":
+
+##
+(olokizumab OR ""CDP6038"") AND (""tested for"" OR ""clinical trials"" OR ""clinical study"" OR ""investigated for"" OR ""evaluated for"") AND (disease OR condition OR disorder OR illness OR ""rheumatoid arthritis"" OR RA)
+##
+
+The key components are:
+1. Olokizumab and its alternate name CDP6038
+2. Terms related to clinical testing and investigation 
+3. General terms for diseases and conditions, as well as the specific condition rheumatoid arthritis (RA) which olokizumab is known to be tested for
+
+The query aims to find documents that mention olokizumab along with language indicating it is being tested or investigated, and names of diseases it is being tested for. Including both general disease terms and the specific RA helps balance recall and precision.
+
+The AND operators ensure all three main concepts (drug, testing, disease) are present. I kept the query focused on the key elements without adding too many synonyms, to maintain relevance to the original question.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(olokizumab OR ""CDP6038"") AND (""tested for"" OR ""clinical trials"" OR ""clinical study"" OR ""investigated for"" OR ""evaluated for"") AND (disease OR condition OR disorder OR illness OR ""rheumatoid arthritis"" OR RA)'}}, 'size': 50}",,"['33142700', '36001712', '25648633', '36535857', '36368906', '26982101', '32033937', '36792848', '31523783', '37989892', '34101570', '24641941', '34344706', '26358841', '36995131', '33720587', '35957736', '37260086', '37042600', '33734435']",[],[],[],0.1,0.5,0.16666666666666669
+6413730e201352f04a00003f,Please summarize the function of Trophinin-associated protein (TROAP),summary,,"Here is my attempt at an Elasticsearch query string for the question ""Please summarize the function of Trophinin-associated protein (TROAP)"":
+
+##
+(""trophinin-associated protein"" OR TROAP OR tastin) AND (function OR role OR activity OR ""mechanism of action"" OR ""biological process"" OR ""cellular function"") AND (""cell adhesion"" OR ""cell migration"" OR ""cell division"" OR ""mitotic spindle"" OR ""microtubule"" OR ""centrosome"" OR ""cytoskeleton"" OR ""proliferation"" OR ""cancer"")
+##
+
+The key components are:
+
+1. Trophinin-associated protein and its synonyms TROAP and tastin. This ensures we find documents specifically about this protein.
+
+2. General terms related to protein function like role, activity, mechanism of action, biological process, cellular function. This casts a wide net for potentially relevant information.
+
+3. Specific terms related to known functions of TROAP, such as cell adhesion, cell migration, cell division, mitotic spindle, microtubule, centrosome, cytoskeleton, proliferation, and cancer. These help focus on the most relevant aspects of TROAP's function based on current knowledge.
+
+The query aims to find documents that discuss the function of TROAP specifically, by requiring the protein name and general function-related terms, while also prioritizing results that mention its known roles in cell adhesion, migration, division, and the cytoskeleton. The inclusion of ""cancer"" helps surface information on its potential role in disease.
+
+Let me know if you would like me to modify or expand the query further. I tried to balance finding comprehensive information on TROAP's function while still maintaining relevance to the protein itself.","{'query': {'query_string': {'query': '(""trophinin-associated protein"" OR TROAP OR tastin) AND (function OR role OR activity OR ""mechanism of action"" OR ""biological process"" OR ""cellular function"") AND (""cell adhesion"" OR ""cell migration"" OR ""cell division"" OR ""mitotic spindle"" OR ""microtubule"" OR ""centrosome"" OR ""cytoskeleton"" OR ""proliferation"" OR ""cancer"")'}}, 'size': 50}",,"['18218922', '36419876', '35722431', '31198787', '29956806', '30431120', '22201876', '31285897', '29117881', '37298609', '22717627', '35708862', '12049630', '30284652', '37731946', '34077623', '33500384', '30021381', '37608033', '7758945', '24071868', '10797941', '34287099', '36691332', '30887286', '10873705', '22997493', '14633596', '37127623', '34139453', '32796815', '16245277', '27295129', '37004005', '24151232', '32541515']",[],[],[],0.5,0.4166666666666667,0.45454545454545453
+6410ed73201352f04a00002f,How does SRSF11 promote metastasis of colon cancer?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""How does SRSF11 promote metastasis of colon cancer?"":
+
+##
+(SRSF11 OR ""serine/arginine-rich splicing factor 11"") AND 
+(""colon cancer"" OR ""colorectal cancer"" OR ""bowel cancer"") AND
+(metastasis OR metastatic OR ""tumor spread"" OR ""cancer spread"") AND
+(promotes OR facilitates OR enhances OR increases OR accelerates OR ""plays a role in"" OR ""is involved in"" OR mediates OR causes)
+##
+
+The key components are:
+1. SRSF11 and its full name as synonyms
+2. Colon cancer and its synonyms colorectal cancer and bowel cancer
+3. Metastasis and related terms like metastatic, tumor/cancer spread
+4. Verbs and phrases indicating promotion or causation, like promotes, facilitates, enhances, increases, ""plays a role in"", ""is involved in"", etc.
+
+The query aims to find documents that discuss how SRSF11 specifically promotes or causes metastasis in the context of colon cancer. The synonyms help capture variations in terminology. The query is relatively targeted since it focuses on a specific gene and cancer type, while still allowing for some variability in how the promotion of metastasis might be described.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(SRSF11 OR ""serine/arginine-rich splicing factor 11"") AND (""colon cancer"" OR ""colorectal cancer"" OR ""bowel cancer"") AND(metastasis OR metastatic OR ""tumor spread"" OR ""cancer spread"") AND(promotes OR facilitates OR enhances OR increases OR accelerates OR ""plays a role in"" OR ""is involved in"" OR mediates OR causes)'}}, 'size': 50}",,['36394206'],[],[],[],1.0,1.0,1.0
+63f03fc8f36125a426000021,What disease can be treated with Lenacapavir?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What disease can be treated with Lenacapavir?"":
+
+##
+(Lenacapavir OR GS-6207) AND (treat* OR therap* OR ""used for"" OR ""indicated for"") AND (""HIV"" OR ""HIV-1"" OR ""human immunodeficiency virus"" OR ""human immunodeficiency virus type 1"" OR ""acquired immunodeficiency syndrome"" OR AIDS)
+##
+
+The key components are:
+- Lenacapavir and its alternate name GS-6207
+- Treatment-related terms like treat*, therap*, ""used for"", ""indicated for"" (the asterisk allows for variations like treats, treated, therapy, therapeutic, etc.)
+- HIV and related terms like HIV-1, human immunodeficiency virus, AIDS
+
+The query focuses on the drug Lenacapavir and aims to find documents that discuss what disease it is a treatment for. Based on my knowledge, Lenacapavir is an investigational drug for the treatment of HIV-1 infection, so I included HIV and AIDS-related terms.
+
+The query is relatively precise since it focuses on a specific drug, but the treatment terms and HIV synonyms allow for some variability in how the information might be expressed. The AND operators ensure all key concepts are present.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(Lenacapavir OR GS-6207) AND (treat* OR therap* OR ""used for"" OR ""indicated for"") AND (""HIV"" OR ""HIV-1"" OR ""human immunodeficiency virus"" OR ""human immunodeficiency virus type 1"" OR ""acquired immunodeficiency syndrome"" OR AIDS)'}}, 'size': 50}",,"['33807824', '37767713', '36961237', '34742581', '35544387', '19104010', '37138515', '37067160', '36411257', '36082606', '29750364', '29244143', '33060363', '38085652', '11920820', '25110880', '32154864', '18056282', '10388657', '21907239', '37866010', '38063404', '37844807', '37125442', '21288824', '34871187', '37094124', '36753704', '37917742', '37451297', '18715920', '38060982', '32180205', '31671622', '30045869', '37374245', '1328500', '35495642', '31312185', '37112972', '37384413', '21175585', '38037430', '38079092', '30283138', '32152082', '35762376', '35028668', '36566886', '17472411']",[],[],[],0.0,0.0,0.0
+641365f6201352f04a00003a,Is Iron deficiency anemia a common complication of chronic kidney disease?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is Iron deficiency anemia a common complication of chronic kidney disease?"":
+
+##
+(""iron deficiency anemia"" OR ""iron-deficiency anemia"" OR IDA) AND 
+(""chronic kidney disease"" OR CKD OR ""chronic renal disease"" OR ""chronic renal failure"" OR ""chronic kidney failure"") AND
+(complication OR complications OR ""co-morbidity"" OR ""co-morbidities"" OR ""co-occurring"" OR cooccurring OR associated OR related) AND
+(common OR frequent OR prevalent OR ""high prevalence"" OR ""highly prevalent"")
+##
+
+The key components are:
+1. Iron deficiency anemia and its abbreviation IDA
+2. Chronic kidney disease and its synonyms/related terms
+3. Terms related to complications or associated conditions
+4. Terms indicating high frequency or prevalence
+
+The query aims to find documents that mention iron deficiency anemia in the context of being a common complication associated with chronic kidney disease. The synonyms and related terms help capture variations in phrasing while still maintaining relevance to the core concepts. 
+
+The AND operators ensure all the main concepts are present, which is important for the specific nature of this question. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""iron deficiency anemia"" OR ""iron-deficiency anemia"" OR IDA) AND (""chronic kidney disease"" OR CKD OR ""chronic renal disease"" OR ""chronic renal failure"" OR ""chronic kidney failure"") AND(complication OR complications OR ""co-morbidity"" OR ""co-morbidities"" OR ""co-occurring"" OR cooccurring OR associated OR related) AND(common OR frequent OR prevalent OR ""high prevalence"" OR ""highly prevalent"")'}}, 'size': 50}",,"['37415621', '31477258', '18390780', '30970355', '35058395', '27236129', '31641775', '29961562', '35644772', '28885736', '37793864', '30636618', '30858723', '37408484', '25364361', '27462400', '28082519', '29804918', '28403561', '34640466', '38059456', '31668632', '35631257', '23919216', '37701608', '19325171', '25351027', '20030475', '28389813', '20618092', '24466209', '17353176', '9070203', '34029682', '28110585', '36771321', '18824288', '36998753', '25038614', '28135334', '36990212', '28963827', '25468387', '21340038', '34254256', '23911105', '30588939', '24315802', '36779522', '36233688']",[],[],[],0.4,0.12121212121212122,0.186046511627907
+6410ef9b201352f04a000031,Can modulation of KCNQ1 splicing prevent arrhythmias?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Can modulation of KCNQ1 splicing prevent arrhythmias?"":
+
+##
+(KCNQ1 AND (splicing OR ""alternative splicing"" OR ""RNA splicing"") AND (modulation OR modulating OR modification OR altering OR regulating OR regulation)) AND (prevent OR prevents OR prevention OR ""protective against"" OR ""protective effect"" OR reduce OR reduces OR reduction) AND (arrhythmia OR arrhythmias OR ""cardiac arrhythmia"" OR ""heart arrhythmia"")
+##
+
+The key components are:
+1. KCNQ1 gene
+2. Splicing and related terms
+3. Modulation and synonyms 
+4. Prevention and related concepts
+5. Arrhythmia and its variants
+
+The query aims to find documents that discuss the modulation of KCNQ1 splicing in relation to preventing arrhythmias. It includes synonyms and related terms for the key concepts to improve recall, while still maintaining a focus on the specific gene, biological process, and disease mentioned in the question.
+
+The AND operators ensure that all main concepts are present, which helps precision. The query is relatively targeted given the specificity of the question, but the synonyms allow for some variability in terminology.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(KCNQ1 AND (splicing OR ""alternative splicing"" OR ""RNA splicing"") AND (modulation OR modulating OR modification OR altering OR regulating OR regulation)) AND (prevent OR prevents OR prevention OR ""protective against"" OR ""protective effect"" OR reduce OR reduces OR reduction) AND (arrhythmia OR arrhythmias OR ""cardiac arrhythmia"" OR ""heart arrhythmia"")'}}, 'size': 50}",,"['23608591', '27162025']",[],[],[],0.5,1.0,0.6666666666666666
+63f57f7f33942b094c000006,What is Catamenial pneumothorax?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is Catamenial pneumothorax?"":
+
+##
+(""catamenial pneumothorax"" OR ""catamenial pneumothoraces"") AND 
+(definition OR description OR characteristics OR features OR pathophysiology OR causes OR etiology) AND
+(""collapsed lung"" OR pneumothorax OR ""air leak"" OR ""pleural space"" OR ""thoracic endometriosis syndrome"" OR ""thoracic endometriosis"")
+##
+
+The key components are:
+
+1. The exact phrase ""catamenial pneumothorax"" and its plural form, as this is the main entity in question.
+
+2. Terms related to defining or describing a medical condition, such as definition, description, characteristics, features, pathophysiology, causes, etiology. This helps find documents that explain what catamenial pneumothorax is.
+
+3. Related medical terms and concepts such as ""collapsed lung"", pneumothorax, ""air leak"", ""pleural space"", ""thoracic endometriosis syndrome"", ""thoracic endometriosis"". These provide additional context and capture documents that discuss catamenial pneumothorax using different terminology.
+
+The query aims to find documents that directly mention catamenial pneumothorax along with language related to defining or explaining the condition and its key features. The additional medical terms provide context without diluting the results too much, since the question is specifically about catamenial pneumothorax.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""catamenial pneumothorax"" OR ""catamenial pneumothoraces"") AND (definition OR description OR characteristics OR features OR pathophysiology OR causes OR etiology) AND(""collapsed lung"" OR pneumothorax OR ""air leak"" OR ""pleural space"" OR ""thoracic endometriosis syndrome"" OR ""thoracic endometriosis"")'}}, 'size': 50}",,"['25102519', '29552245', '28069481', '34825583', '23084679', '28315819', '31427853', '25981153', '24331768', '16427904', '37685644', '32816934', '25742837', '30020575', '18704865', '23698374', '29038042', '32064421', '22786988', '19670769', '27507105', '15457149', '37961963', '29865779', '29704815', '19682826', '18775256', '26023672', '8694636', '24200154', '33731157', '31542450', '26306694', '19033519', '12097775', '28762057', '18976993', '19777977', '16113003', '26640936', '15756086', '23180431', '9599089', '36853850', '12842566', '32687200', '29846876', '31709140', '32448976', '24091546']",[],[],[],0.0,0.0,0.0
+64144419201352f04a000045,Please summarize haptenization.,summary,,"Here is my attempt at an Elasticsearch query string for the request ""Please summarize haptenization."":
+
+##
+(haptenization OR haptinization OR ""hapten formation"" OR ""hapten synthesis"") AND (summary OR overview OR review OR ""key points"" OR definition OR description OR process OR mechanism)
+##
+
+The query focuses on two main concepts:
+1. Haptenization and its alternate spellings/phrasings
+2. Terms related to summarizing or providing an overview, like summary, review, ""key points"", definition, description, process, mechanism
+
+By combining these concepts with an AND operator, the query aims to find documents that provide a summary or overview specifically of haptenization. The synonyms and related terms help capture different ways the concept of haptenization and the idea of summarizing may be expressed.
+
+However, since the request is quite broad (asking for a general summary rather than a specific aspect of haptenization), the query is also kept relatively broad to maintain high recall. The terms are not restricted to a particular field to allow for the relevant information to be found in either the title or abstract.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(haptenization OR haptinization OR ""hapten formation"" OR ""hapten synthesis"") AND (summary OR overview OR review OR ""key points"" OR definition OR description OR process OR mechanism)'}}, 'size': 50}",,"['2581734', '23510340', '21680886', '21673709', '16248836', '30251847', '19358516', '10726725', '9769108', '29222255', '22729028', '1958023', '362512', '24783247', '24998485', '17584015', '15094213', '1086240', '37184291', '9066938', '19568734', '24936850', '9491234', '7511567', '1235253', '22151305', '12270198', '6770030', '6602202', '24949488', '19839974', '12653709', '18596584', '25041614', '16191014', '30798944', '7041144', '9691434', '6220933', '11964707', '11144658', '3766527', '4120095', '16837912', '7613139', '21738956', '7524836', '58456', '31119346', '17008874']",[],[],[],0.0,0.0,0.0
+6414c124690f196b51000002,Is trichotillomania encountered with equali frequency in males and females?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is trichotillomania encountered with equal frequency in males and females?"":
+
+##
+(trichotillomania OR ""hair-pulling disorder"" OR ""compulsive hair pulling"") AND (frequency OR prevalence OR incidence OR occurrence OR epidemiology) AND (gender OR sex) AND ((""equal frequency"" OR ""equally frequent"") OR (""males and females"" OR ""men and women"") OR (""gender differences"" OR ""sex differences""))
+##
+
+The key components are:
+1. Trichotillomania and its synonyms/related terms
+2. Terms related to frequency or prevalence 
+3. Terms related to gender or sex
+4. Specific phrases related to equal frequency between genders or potential gender differences
+
+The query aims to find documents that discuss the frequency or prevalence of trichotillomania in the context of gender or sex. It includes synonyms for the disorder and related epidemiological terms. The final clause includes specific phrases around equal frequency as well as potential gender differences, to capture a range of relevant information.
+
+The query balances including key concepts and specific phrases while avoiding overly broad terms. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(trichotillomania OR ""hair-pulling disorder"" OR ""compulsive hair pulling"") AND (frequency OR prevalence OR incidence OR occurrence OR epidemiology) AND (gender OR sex) AND ((""equal frequency"" OR ""equally frequent"") OR (""males and females"" OR ""men and women"") OR (""gender differences"" OR ""sex differences""))'}}, 'size': 50}",,"['33420536', '33008538', '33291280', '35166660', '33654522', '33623263', '26861522', '25770354', '20694115', '27477178']",[],[],[],0.0,0.0,0.0
+64041701201352f04a000017,What is the triad of the Eagle-Barrett Syndrome?,list,,"Here is my attempt at an Elasticsearch query string for the question ""What is the triad of the Eagle-Barrett Syndrome?"":
+
+##
+(""Eagle-Barrett Syndrome"" OR ""Eagle Barrett Syndrome"" OR ""Prune Belly Syndrome"" OR ""Prune-Belly Syndrome"" OR ""Abdominal Muscle Deficiency Syndrome"") AND (triad OR ""three features"" OR ""three characteristics"" OR ""three abnormalities"" OR ""three malformations"") AND (""abdominal wall defect"" OR ""abdominal muscle deficiency"" OR ""cryptorchidism"" OR ""undescended testes"" OR ""urinary tract anomalies"" OR ""dilated urinary tract"" OR ""urinary tract dilation"")
+##
+
+The key components are:
+1. Eagle-Barrett Syndrome and its synonyms like Prune Belly Syndrome and Abdominal Muscle Deficiency Syndrome
+2. Terms related to a triad or set of three features/characteristics/abnormalities
+3. The specific features that make up the triad in Eagle-Barrett Syndrome: abdominal wall defect, cryptorchidism (undescended testes), and urinary tract anomalies. I included some variations in terminology for each feature.
+
+The query aims to find documents that mention Eagle-Barrett Syndrome along with language about a triad of features, and specifically the three abnormalities that characterize this syndrome. The synonyms help improve recall by capturing different ways the syndrome and its features may be referred to, while still maintaining precision by focusing on the key concepts in the question.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""Eagle-Barrett Syndrome"" OR ""Eagle Barrett Syndrome"" OR ""Prune Belly Syndrome"" OR ""Prune-Belly Syndrome"" OR ""Abdominal Muscle Deficiency Syndrome"") AND (triad OR ""three features"" OR ""three characteristics"" OR ""three abnormalities"" OR ""three malformations"") AND (""abdominal wall defect"" OR ""abdominal muscle deficiency"" OR ""cryptorchidism"" OR ""undescended testes"" OR ""urinary tract anomalies"" OR ""dilated urinary tract"" OR ""urinary tract dilation"")'}}, 'size': 50}",,"['15868169', '10949420', '9138716', '6231520', '30560020', '7057514', '2080794', '28424', '30310713', '31496864', '20800888', '20684', '23249412', '6139876', '29213170', '7557534', '4283493', '32821313', '34308216', '31193917', '8249197', '24086893', '33342845', '38073712', '26729223', '20690523', '2969853', '29198187', '10979181', '2014185', '12579407', '3544992', '21597971', '35429431', '34016542', '25548711', '22802998', '34631626', '22732818', '2602227', '3537997', '30632118', '34045']",[],[],[],0.1,0.25,0.14285714285714288
+640c85e9201352f04a000026,What cells proliferate in Mantle Cell Lymphoma,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What cells proliferate in Mantle Cell Lymphoma"":
+
+##(""mantle cell lymphoma"" OR MCL) AND (proliferate OR proliferation OR ""cell division"" OR ""cell growth"" OR ""cell expansion"") AND (""B cells"" OR ""B lymphocytes"" OR ""B-cells"" OR ""B-lymphocytes"" OR ""CD5-positive B cells"" OR ""CD5+ B cells"" OR ""cyclin D1 positive cells"" OR ""cyclin D1+ cells"")##
+
+The key components are:
+1. ""Mantle cell lymphoma"" and its acronym MCL
+2. Proliferation and related terms like ""cell division"", ""cell growth"", ""cell expansion""
+3. Specific cell types known to be involved in MCL pathogenesis, namely B cells/B lymphocytes, especially those positive for CD5 and/or cyclin D1
+
+The query requires both the disease name and the proliferation concept, while allowing for variations in terminology. It then focuses on the specific cell types most relevant to MCL.
+
+The double quotes around phrases ensure they are searched together. The OR operator allows for different synonyms and related terms.
+
+The query aims to balance precision by focusing on MCL and B cells, while still capturing potentially relevant results through the proliferation synonyms and B cell subtypes. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""mantle cell lymphoma"" OR MCL) AND (proliferate OR proliferation OR ""cell division"" OR ""cell growth"" OR ""cell expansion"") AND (""B cells"" OR ""B lymphocytes"" OR ""B-cells"" OR ""B-lymphocytes"" OR ""CD5-positive B cells"" OR ""CD5+ B cells"" OR ""cyclin D1 positive cells"" OR ""cyclin D1+ cells"")'}}, 'size': 50}",,"['19279536', '10468854', '29658927', '10673747', '27123851', '23330001', '18337555', '11002221', '22024769', '16497967', '31234647', '31764119', '19846810', '22374828', '15161013', '36882482', '33747637', '11420468', '31031018', '17627275', '29861875', '22915070', '31840115', '10942246', '29045844', '9576009', '35865405', '23762653', '17267661', '11242796', '33215253', '27894215', '37225761', '30964854', '34722279', '17942753', '7742549', '18410453', '21330319', '10319380', '20490333', '23999128', '27697772', '29872501', '19243299', '20530581', '38034984', '22213803', '21603610', '9665478']",[],[],[],0.0,0.0,0.0
+6415bb3c690f196b5100000e,What is the estimated cost reduction when using telegenetics?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What is the estimated cost reduction when using telegenetics?"":
+
+##
+(telegenetics OR ""tele-genetics"" OR ""remote genetics"" OR ""telemedicine genetics"" OR ""telehealth genetics"") AND (""cost reduction"" OR ""cost savings"" OR ""reduced cost"" OR ""lower cost"" OR ""decreased cost"" OR ""cost-effective"" OR ""cost-effectiveness"" OR ""cost benefit"" OR ""economic benefit"" OR ""financial benefit"") AND (estimated OR estimate OR estimation OR approximated OR approximate OR calculated OR calculation)
+##
+
+The key components are:
+1. Telegenetics and related terms like tele-genetics, remote genetics, telemedicine/telehealth genetics
+2. Cost reduction and related concepts like cost savings, reduced/lower/decreased cost, cost-effectiveness, economic/financial benefit
+3. Terms related to estimation like estimated, estimate, approximated, calculated
+
+The query aims to find documents that mention telegenetics along with language about cost reduction and estimated amounts. The synonyms and related terms help capture various ways these concepts could be expressed.
+
+I focused on the key concepts without introducing too many tangentially related terms, to maintain a balance between recall and precision. The question is fairly specific so the query can be more targeted.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(telegenetics OR ""tele-genetics"" OR ""remote genetics"" OR ""telemedicine genetics"" OR ""telehealth genetics"") AND (""cost reduction"" OR ""cost savings"" OR ""reduced cost"" OR ""lower cost"" OR ""decreased cost"" OR ""cost-effective"" OR ""cost-effectiveness"" OR ""cost benefit"" OR ""economic benefit"" OR ""financial benefit"") AND (estimated OR estimate OR estimation OR approximated OR approximate OR calculated OR calculation)'}}, 'size': 50}",,['26785833'],[],[],[],1.0,1.0,1.0
+63f03ae6f36125a42600001d,What is the target of BI 1015550?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What is the target of BI 1015550?"":
+
+##
+(""BI 1015550"" OR ""BI-1015550"" OR ""BI1015550"") AND (target OR targets OR inhibits OR inhibitor OR ""mechanism of action"" OR ""mode of action"") AND (""Bruton's tyrosine kinase"" OR BTK OR ""Bruton tyrosine kinase"" OR ""Bruton kinase"")
+##
+
+The key components are:
+
+1. BI 1015550 and variations of its name, to ensure we find documents specifically about this compound.
+
+2. General terms related to drug targets and mechanisms of action, like ""target"", ""inhibits"", ""inhibitor"", ""mechanism of action"", ""mode of action"". This casts a wide net for potentially relevant information.
+
+3. The specific known target of BI 1015550, Bruton's tyrosine kinase (BTK), along with synonyms and the abbreviation. This helps hone in on the precise target while allowing for some variability in terminology.
+
+The query aims to find documents that mention BI 1015550 along with language indicating its biological target or mechanism of action, with a particular emphasis on BTK. The synonyms and related terms help improve recall while still maintaining a focus on the key entities and concepts in the original question.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""BI 1015550"" OR ""BI-1015550"" OR ""BI1015550"") AND (target OR targets OR inhibits OR inhibitor OR ""mechanism of action"" OR ""mode of action"") AND (""Bruton\'s tyrosine kinase"" OR BTK OR ""Bruton tyrosine kinase"" OR ""Bruton kinase"")'}}, 'size': 50}",,[],[],[],[],0.0,0.0,0.0
+64089be7201352f04a000022,Please summarize the difference between REMS and RMPs,summary,,"Here is my attempt at an Elasticsearch query string for the question ""Please summarize the difference between REMS and RMPs"":
+
+##
+(""REMS"" OR ""Risk Evaluation and Mitigation Strategy"") AND 
+(""RMPs"" OR ""Risk Management Plans"") AND
+(difference OR differences OR comparison OR compared OR versus OR vs OR ""in contrast to"" OR ""as opposed to"")
+##
+
+The key components are:
+
+1. REMS and its full form ""Risk Evaluation and Mitigation Strategy""
+2. RMPs and its full form ""Risk Management Plans""
+3. Terms related to comparing or contrasting two things, like difference, comparison, versus, ""in contrast to"", etc.
+
+The query aims to find documents that mention both REMS and RMPs along with language comparing or differentiating them. By focusing on the two key acronyms and their full forms, plus comparison-related terms, the query tries to hone in on the core question of summarizing the difference between these two concepts.
+
+I kept the query relatively focused since the question is quite specific. Adding too many tangentially related terms could reduce the precision of the results. However, let me know if you would like me to expand the query further to potentially capture a broader set of relevant documents.","{'query': {'query_string': {'query': '(""REMS"" OR ""Risk Evaluation and Mitigation Strategy"") AND (""RMPs"" OR ""Risk Management Plans"") AND(difference OR differences OR comparison OR compared OR versus OR vs OR ""in contrast to"" OR ""as opposed to"")'}}, 'size': 50}",,"['23244814', '24357107', '25114783']",[],[],[],0.3333333333333333,1.0,0.5
+63f9cd2f33942b094c000011,Does microexon alternative splicing of small GTPase regulators have implication in central nervous system diseases?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Does microexon alternative splicing of small GTPase regulators have implication in central nervous system diseases?"":
+
+##
+(""microexon alternative splicing"" OR ""microexon splicing"" OR ""alternative splicing of microexons"") AND 
+(""small GTPase regulators"" OR ""small G protein regulators"" OR ""small GTP-binding protein regulators"") AND
+(""central nervous system diseases"" OR ""CNS diseases"" OR ""neurological diseases"" OR ""neurological disorders"" OR ""brain diseases"") AND
+(implication OR implications OR role OR involvement OR association OR link OR linked)
+##
+
+The key components are:
+1. Microexon alternative splicing and related terms
+2. Small GTPase regulators and synonyms 
+3. Central nervous system diseases and related terms like neurological diseases/disorders
+4. Terms suggesting an implication or association like role, involvement, link
+
+The query aims to find documents that mention all three key concepts (microexon splicing, small GTPase regulators, CNS diseases) along with language suggesting an implication or association between them. The synonyms and related terms help capture variations in terminology.
+
+I focused on the core entities and concepts while avoiding overly broad terms that could reduce precision. The query aims to balance finding potentially relevant documents with maintaining specificity to the question asked. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""microexon alternative splicing"" OR ""microexon splicing"" OR ""alternative splicing of microexons"") AND (""small GTPase regulators"" OR ""small G protein regulators"" OR ""small GTP-binding protein regulators"") AND(""central nervous system diseases"" OR ""CNS diseases"" OR ""neurological diseases"" OR ""neurological disorders"" OR ""brain diseases"") AND(implication OR implications OR role OR involvement OR association OR link OR linked)'}}, 'size': 50}",,['34155820'],[],[],[],1.0,1.0,1.0
+63eeeaaaf36125a426000004,Beremagene Geperpavec is tested for which disease?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""Beremagene Geperpavec is tested for which disease?"":
+
+##
+(""Beremagene Geperpavec"" OR ""Beremagene"" OR ""Geperpavec"" OR ""KB103"") AND 
+(tested OR testing OR trial OR trials OR studied OR evaluating OR investigated OR investigating) AND
+(""dystrophic epidermolysis bullosa"" OR DEB OR ""epidermolysis bullosa"" OR EB OR ""skin fragility disorder"" OR ""skin blistering disorder"")
+##
+
+The key components are:
+1. Beremagene Geperpavec and its alternative names/codes like KB103
+2. Terms related to clinical testing and investigation 
+3. Dystrophic epidermolysis bullosa (DEB) and related terms like skin fragility/blistering disorder
+
+The query focuses on finding documents that mention the specific drug Beremagene Geperpavec along with language indicating it is being tested or studied, and terms related to the disease dystrophic epidermolysis bullosa. 
+
+I included some synonyms and related terms for DEB to improve recall, but tried not to make it too broad since the question is asking about a specific disease. The drug name is fairly unique so I only included a couple variations.
+
+Let me know if you would like me to modify or expand the query further. I aimed to balance precision and recall for the specific question asked.","{'query': {'query_string': {'query': '(""Beremagene Geperpavec"" OR ""Beremagene"" OR ""Geperpavec"" OR ""KB103"") AND (tested OR testing OR trial OR trials OR studied OR evaluating OR investigated OR investigating) AND(""dystrophic epidermolysis bullosa"" OR DEB OR ""epidermolysis bullosa"" OR EB OR ""skin fragility disorder"" OR ""skin blistering disorder"")'}}, 'size': 50}",,"['36516090', '35347281']",[],[],[],0.5,1.0,0.6666666666666666
+64138ce8201352f04a000042,Hairpatches is a single gene mutation associated with what disease?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""Hairpatches is a single gene mutation associated with what disease?"":
+
+##
+(""hairpatches"" OR ""hair patches"") AND (""single gene"" OR ""single-gene"" OR monogenic) AND (mutation OR variant) AND (""associated with"" OR ""linked to"" OR causes OR ""risk factor for"") AND (disease OR disorder OR condition OR syndrome)
+##
+
+The key components are:
+1. ""Hairpatches"" - the specific gene mutation mentioned, also including ""hair patches"" as a variant.
+2. ""single gene"", ""single-gene"", monogenic - terms describing the type of mutation.
+3. mutation, variant - synonyms for genetic changes.
+4. ""associated with"", ""linked to"", causes, ""risk factor for"" - terms connecting the mutation to a disease.
+5. disease, disorder, condition, syndrome - terms for the health issue the mutation is associated with.
+
+The query aims to find documents that mention the ""hairpatches"" mutation along with terms indicating it is a single gene mutation, and language connecting it to some disease or disorder. The query is relatively broad in the disease terms since the question does not specify a particular condition, but still focuses on the key concepts of the hairpatches mutation and its disease association.
+
+Let me know if you would like me to modify or expand the query further. I tried to balance including relevant synonyms and related terms while not introducing irrelevant concepts.","{'query': {'query_string': {'query': '(""hairpatches"" OR ""hair patches"") AND (""single gene"" OR ""single-gene"" OR monogenic) AND (mutation OR variant) AND (""associated with"" OR ""linked to"" OR causes OR ""risk factor for"") AND (disease OR disorder OR condition OR syndrome)'}}, 'size': 50}",,['1836514'],[],[],[],1.0,0.5,0.6666666666666666
+63f9cd0b33942b094c000010,What is the alternative microexon splicing by RBFOX2 and PTBP1 associated with?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What is the alternative microexon splicing by RBFOX2 and PTBP1 associated with?"":
+
+##
+(""RBFOX2"" OR ""RNA binding fox-1 homolog 2"" OR ""RNA binding protein fox-1 homolog 2"") AND 
+(""PTBP1"" OR ""polypyrimidine tract binding protein 1"") AND
+(""alternative splicing"" OR ""differential splicing"" OR ""alternative microexon splicing"" OR ""microexon splicing"") AND
+(associated OR linked OR related OR correlation OR connection) AND
+(""disease"" OR ""disorder"" OR ""condition"" OR ""syndrome"" OR ""cancer"" OR ""tumor"" OR ""development"" OR ""differentiation"")
+##
+
+The key components are:
+1. RBFOX2 and its synonyms
+2. PTBP1 and its synonyms
+3. Terms related to alternative/microexon splicing 
+4. Words indicating an association or relationship
+5. General terms for what the splicing could be associated with, like diseases, development, etc.
+
+The query requires all the main entities (RBFOX2, PTBP1, alternative splicing) and the concept of an association. It then includes broad terms for what the association could be with, since the question does not specify a particular disease or biological process. 
+
+The synonyms help capture variations in how the proteins and splicing may be referred to, improving recall. At the same time, requiring all the key entities and the association concept helps maintain precision.
+
+Let me know if you would like me to modify or expand the query further. I aimed to strike a balance between finding potentially relevant information and not making the query too broad.","{'query': {'query_string': {'query': '(""RBFOX2"" OR ""RNA binding fox-1 homolog 2"" OR ""RNA binding protein fox-1 homolog 2"") AND (""PTBP1"" OR ""polypyrimidine tract binding protein 1"") AND(""alternative splicing"" OR ""differential splicing"" OR ""alternative microexon splicing"" OR ""microexon splicing"") AND(associated OR linked OR related OR correlation OR connection) AND(""disease"" OR ""disorder"" OR ""condition"" OR ""syndrome"" OR ""cancer"" OR ""tumor"" OR ""development"" OR ""differentiation"")'}}, 'size': 50}",,"['34346508', '34302435']",[],[],[],0.5,1.0,0.6666666666666666
+63f56f7533942b094c000002,Which gene is implicated in Canavan disease?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""Which gene is implicated in Canavan disease?"":
+
+##
+(""Canavan disease"" OR ""Canavan's disease"" OR ""Van Bogaert-Bertrand disease"" OR ""aspartoacylase deficiency"" OR ""ASPA deficiency"") AND (gene OR genes OR genetic OR genetics OR genotype OR mutation OR mutations OR variant OR variants) AND (implicated OR associated OR related OR linked OR caused OR ""due to"")
+##
+
+The key components are:
+
+1. Canavan disease and its synonyms, including the alternative name ""Van Bogaert-Bertrand disease"" and terms related to the enzyme deficiency that causes it (aspartoacylase deficiency, ASPA deficiency). This ensures we find documents specifically about Canavan disease.
+
+2. Gene-related terms like gene, genetic, genotype, mutation, variant. This captures the concept of genetic factors.
+
+3. Terms connecting the disease to the gene like implicated, associated, related, linked, caused. This helps find documents discussing the causal relationship.
+
+The query aims to find documents that mention Canavan disease along with genes or genetic factors that are implicated in causing the disease. The synonyms and related terms help improve recall by capturing different ways the concepts may be expressed, while still maintaining a focus on the key entities of Canavan disease and causative genes. The AND operators ensure all the main concepts are present, which helps precision.
+
+Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""Canavan disease"" OR ""Canavan\'s disease"" OR ""Van Bogaert-Bertrand disease"" OR ""aspartoacylase deficiency"" OR ""ASPA deficiency"") AND (gene OR genes OR genetic OR genetics OR genotype OR mutation OR mutations OR variant OR variants) AND (implicated OR associated OR related OR linked OR caused OR ""due to"")'}}, 'size': 50}",,"['16138249', '28077719', '21907889', '12162821', '16217711', '7668285', '8335152', '15851013', '26797702', '14572138', '26613958', '16437572', '10704428', '34498299', '22878930', '7562269', '22468686', '26586007', '16113575', '17999961', '29456021', '24826990', '24682784', '14567959', '20393311', '33547378', '27039844', '7774116', '11589315', '28101991', '22219087', '16807907', '21625469', '20464498', '33779415', '10464621', '37601414', '25177395', '25712859', '25668701', '17177147', '36968992', '27288788', '15337171', '36568275', '10407784', '28626388', '12638939', '15784740', '27717881']",[],[],[],0.0,0.0,0.0
+6411b4a8201352f04a000035,Is prosopagnosia also known as lack of auditory recognition?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Is prosopagnosia also known as lack of auditory recognition?"":
+
+##
+(prosopagnosia OR ""face blindness"" OR ""facial agnosia"") AND 
+(""lack of auditory recognition"" OR ""auditory agnosia"" OR ""auditory processing disorder"" OR ""auditory recognition"" OR ""sound agnosia"") AND
+(""also known as"" OR ""known as"" OR ""referred to as"" OR ""called"" OR ""termed"" OR synonym OR synonymous)
+##
+
+The key components are:
+1. Prosopagnosia and its synonyms like ""face blindness"" and ""facial agnosia""
+2. ""Lack of auditory recognition"" and related terms like ""auditory agnosia"", ""auditory processing disorder"", ""sound agnosia""
+3. Phrases indicating synonymy like ""also known as"", ""referred to as"", ""called"", etc.
+
+The query aims to find documents that mention both prosopagnosia and lack of auditory recognition (or their synonyms) along with language suggesting they may be synonymous terms. 
+
+However, based on my knowledge, prosopagnosia specifically refers to impaired facial recognition, while auditory agnosia or lack of auditory recognition is a distinct condition affecting sound processing. So while the query construction is sound, I would expect the results to indicate these are not actually synonymous terms. The question seems to contain a misconception.","{'query': {'query_string': {'query': '(prosopagnosia OR ""face blindness"" OR ""facial agnosia"") AND (""lack of auditory recognition"" OR ""auditory agnosia"" OR ""auditory processing disorder"" OR ""auditory recognition"" OR ""sound agnosia"") AND(""also known as"" OR ""known as"" OR ""referred to as"" OR ""called"" OR ""termed"" OR synonym OR synonymous)'}}, 'size': 50}",,['26873235'],[],[],[],0.0,0.0,0.0
+6415babe690f196b5100000d,What is telegenetics?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is telegenetics?"":
+
+##
+(""telegenetics"" OR ""tele-genetics"" OR ""telemedicine genetics"" OR ""telemedicine genetic services"" OR ""remote genetic services"" OR ""remote genetics"" OR ""virtual genetic counseling"" OR ""online genetic counseling"") AND (""definition"" OR ""meaning"" OR ""concept"" OR ""term"" OR ""field"" OR ""branch"" OR ""discipline"" OR ""specialty"" OR ""subspecialty"")
+##
+
+The query focuses on two main components:
+1. Telegenetics and its synonyms/related terms. I included variations of the term like ""tele-genetics"", ""telemedicine genetics"", ""remote genetic services"", ""virtual genetic counseling"", etc. This helps capture different ways the concept may be referred to.
+
+2. Terms related to defining or explaining a concept, like ""definition"", ""meaning"", ""term"", ""field"", ""branch"", ""discipline"", ""specialty"". This helps find documents that provide an explanation or overview of what telegenetics is.
+
+The AND operator ensures that the results contain both the telegenetics concept and some type of definitional or explanatory content. 
+
+I kept the query relatively broad since the question is asking for a general definition or explanation of telegenetics. The query aims to find relevant documents that introduce or provide an overview of the field, rather than narrowly focusing on specific aspects. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""telegenetics"" OR ""tele-genetics"" OR ""telemedicine genetics"" OR ""telemedicine genetic services"" OR ""remote genetic services"" OR ""remote genetics"" OR ""virtual genetic counseling"" OR ""online genetic counseling"") AND (""definition"" OR ""meaning"" OR ""concept"" OR ""term"" OR ""field"" OR ""branch"" OR ""discipline"" OR ""specialty"" OR ""subspecialty"")'}}, 'size': 50}",,"['26785833', '16679961', '34355459', '35464100', '30825358', '30559758', '33824502', '33027215', '25833335', '21799430', '23393646', '22498847', '34223277', '26831751', '24014153', '21787118', '30617812', '32314856', '24503778', '35456422', '15625165', '22566244', '27242960', '34096134', '37102207', '25591016', '9719913', '34617357', '28126544', '35452249']",[],[],[],0.0,0.0,0.0
+63f04546f36125a426000024,What is the mechanism of action of Mitapivat?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is the mechanism of action of Mitapivat?"":
+
+##
+(""Mitapivat"" OR ""AG-348"") AND (""mechanism of action"" OR ""mode of action"" OR ""pharmacodynamics"" OR ""pharmacology"" OR ""activity"" OR ""function"" OR ""effect"" OR ""how it works"") AND (""pyruvate kinase"" OR ""PK"" OR ""PKR"" OR ""red blood cell"" OR ""erythrocyte"" OR ""RBC"") AND (activator OR agonist OR ""allosteric activator"" OR ""allosteric agonist"")
+##
+
+The key components are:
+
+1. Mitapivat and its alternate name AG-348.
+
+2. General terms related to mechanism of action like pharmacodynamics, activity, function, etc. This casts a wide net for potentially relevant information.
+
+3. Terms related to pyruvate kinase (PK or PKR), red blood cells (RBC or erythrocyte), as Mitapivat is known to target the red blood cell form of pyruvate kinase.
+
+4. Terms describing Mitapivat's specific mechanism as an allosteric activator or agonist of pyruvate kinase.
+
+The query aims to find documents that discuss Mitapivat's mechanism of action, specifically its activity as an allosteric activator of red blood cell pyruvate kinase. The synonyms and related terms help capture variations in terminology while still maintaining a focus on the key concepts. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(""Mitapivat"" OR ""AG-348"") AND (""mechanism of action"" OR ""mode of action"" OR ""pharmacodynamics"" OR ""pharmacology"" OR ""activity"" OR ""function"" OR ""effect"" OR ""how it works"") AND (""pyruvate kinase"" OR ""PK"" OR ""PKR"" OR ""red blood cell"" OR ""erythrocyte"" OR ""RBC"") AND (activator OR agonist OR ""allosteric activator"" OR ""allosteric agonist"")'}}, 'size': 50}",,"['37596712', '31974203', '34987744', '38066891', '37713687', '36847623', '28760888', '37125655', '35366607', '37676741', '35988546', '38066940', '36124781', '35576529', '33822774', '30091852', '36853806', '38066911', '36935283', '37934880', '35417638', '36072510', '37943362', '35964609', '33690814', '36794508', '36698833', '35384026', '34889443']",[],[],[],0.0,0.0,0.0
+641357bc201352f04a000039,Do cells undergoing necroptosis show disruption of their cell membranes?,yesno,,"Here is my attempt at an Elasticsearch query string for the question ""Do cells undergoing necroptosis show disruption of their cell membranes?"":
+
+##
+(necroptosis OR ""programmed necrosis"" OR ""caspase-independent cell death"") AND (""cell membrane"" OR ""plasma membrane"" OR ""cytoplasmic membrane"") AND (disrupt* OR damage* OR injur* OR ruptur* OR permeabiliz* OR ""loss of integrity"")
+##
+
+The key components are:
+1. Necroptosis and related terms like ""programmed necrosis"" and ""caspase-independent cell death""
+2. Cell membrane and synonyms like ""plasma membrane"" and ""cytoplasmic membrane""
+3. Terms related to disruption or damage, like disrupt, damage, injure, rupture, permeabilize, ""loss of integrity""
+
+The query uses the AND operator to require all three main concepts to be present. The * wildcard allows for variations in word endings (e.g., disrupt, disrupts, disrupted, disruption).
+
+The query aims to find documents that specifically discuss whether necroptosis involves disruption of cell membranes. It focuses on the key entities and concepts while allowing for some variability in terminology. The double quotes around multi-word phrases ensure they are searched together.
+
+Let me know if you would like me to modify or expand the query further. I tried to strike a balance between specificity and inclusiveness based on the question asked.","{'query': {'query_string': {'query': '(necroptosis OR ""programmed necrosis"" OR ""caspase-independent cell death"") AND (""cell membrane"" OR ""plasma membrane"" OR ""cytoplasmic membrane"") AND (disrupt* OR damage* OR injur* OR ruptur* OR permeabiliz* OR ""loss of integrity"")'}}, 'size': 50}",,"['27999433', '30140326', '27444869', '25493335', '29076500', '32125731', '23125016', '28388403', '31138766', '20823910', '34539677', '31678492', '28380356', '24719454', '27573174', '11388913', '29382757', '30148498', '27034377', '32430176', '35086466', '24366341', '32687661', '11573949', '32641397', '33848465', '32561730', '32826875', '28388412', '34594225', '35293986', '37373257', '23438821', '31410978', '26024392', '26853145', '20010783', '36446770', '34322024', '31097456', '36411714', '37365800', '34698396', '37431828', '31490656', '29393427', '34500630', '37356350', '31766571', '32457484']",[],[],[],0.3,0.23076923076923078,0.2608695652173913
+6414c3f3690f196b51000005,What is the definition of dermatillomania?,summary,,"Here is my attempt at an Elasticsearch query string for the question ""What is the definition of dermatillomania?"":
+
+##
+(""dermatillomania"" OR ""excoriation disorder"" OR ""skin-picking disorder"" OR ""psychogenic excoriation"" OR ""neurotic excoriation"" OR ""acne excoriee"" OR ""skin picking syndrome"") AND (definition OR defined OR meaning OR ""refers to"" OR ""is a"" OR ""is an"" OR ""is the"")
+##
+
+The key components are:
+1. Dermatillomania and its various synonyms, including the medical terms ""excoriation disorder"", ""psychogenic excoriation"", ""neurotic excoriation"", ""acne excoriee"", and the more colloquial ""skin-picking disorder"" and ""skin picking syndrome"". This helps capture the concept regardless of the specific terminology used.
+
+2. Definition-related terms like ""definition"", ""defined"", ""meaning"", ""refers to"", ""is a"", ""is an"", ""is the"". These help hone in on sentences or passages that are likely to provide a definition or explanation of what dermatillomania is.
+
+The query aims to find documents that mention dermatillomania or a synonym in close proximity to language related to providing a definition. The OR operator allows for flexibility in terminology while the AND operator ensures both the disorder and definition concepts are present, promoting relevance and precision.
+
+Let me know if you would like me to modify or expand the query further. I'm happy to refine it based on your feedback.","{'query': {'query_string': {'query': '(""dermatillomania"" OR ""excoriation disorder"" OR ""skin-picking disorder"" OR ""psychogenic excoriation"" OR ""neurotic excoriation"" OR ""acne excoriee"" OR ""skin picking syndrome"") AND (definition OR defined OR meaning OR ""refers to"" OR ""is a"" OR ""is an"" OR ""is the"")'}}, 'size': 50}",,"['25974792', '22377838', '36483749', '22468175', '35843137', '31232909', '37023597', '23303467', '31779877', '33654612', '28128164', '3679664', '9818631', '6583987', '21323095', '30895799', '20531220', '32825621', '27007062', '30627622', '16112441', '26798982', '34397774', '34613556', '28129492', '34560370', '32386041', '23123103', '36133915', '20533371', '29727807', '10030563', '36856701', '35723689', '29218753', '34721107', '20618498', '27283953', '25150776', '25696776', '24740235', '29052453', '36970962', '33008538', '36683012', '24643827', '33393216', '35350511', '28511823', '26585600']",[],[],[],0.1,0.5,0.16666666666666669
+63eeeb70f36125a426000005,What disease can be treated with Glofitamab?,factoid,,"Here is my attempt at an Elasticsearch query string for the question ""What disease can be treated with Glofitamab?"":
+
+##
+(glofitamab OR ""RO7082859"" OR ""RG6026"") AND 
+(""treats"" OR ""treatment"" OR ""therapy"" OR ""used for"" OR ""indicated for"") AND
+(""non-hodgkin lymphoma"" OR ""non hodgkin lymphoma"" OR NHL OR ""b-cell lymphoma"" OR ""b cell lymphoma"" OR ""diffuse large b-cell lymphoma"" OR DLBCL OR ""aggressive lymphoma"")
+##
+
+The key components are:
+
+1. Glofitamab and its alternate names/codes. This ensures we find documents specifically about this drug.
+
+2. Treatment-related terms like ""treats"", ""used for"", ""indicated for"", etc. This helps find information about what diseases glofitamab is a treatment for.
+
+3. Non-Hodgkin lymphoma and related terms. Based on my knowledge, glofitamab is being developed as a treatment for certain types of non-Hodgkin lymphoma, particularly diffuse large B-cell lymphoma (DLBCL). Including these disease terms and abbreviations should help retrieve relevant results.
+
+The query aims to find documents that mention glofitamab along with language indicating the diseases it treats, focusing on non-Hodgkin lymphomas. The synonyms and related terms help improve recall while still maintaining precision by not introducing unrelated diseases. Let me know if you would like me to modify or expand the query further.","{'query': {'query_string': {'query': '(glofitamab OR ""RO7082859"" OR ""RG6026"") AND (""treats"" OR ""treatment"" OR ""therapy"" OR ""used for"" OR ""indicated for"") AND(""non-hodgkin lymphoma"" OR ""non hodgkin lymphoma"" OR NHL OR ""b-cell lymphoma"" OR ""b cell lymphoma"" OR ""diffuse large b-cell lymphoma"" OR DLBCL OR ""aggressive lymphoma"")'}}, 'size': 50}",,"['33739857', '36507690', '33406104', '36198538', '37211991', '37551951', '36895020', '38044486', '35626120', '36726938', '35182296', '34941996', '36078155', '34263696', '37488074', '37690811', '37672954']",[],[],[],0.2,0.6666666666666666,0.30769230769230765
