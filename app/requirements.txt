@@ -3,3 +3,4 @@ python-dotenv
 google-generativeai
 gradio==5.4
 pandas
+portalocker

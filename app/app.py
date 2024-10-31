@@ -9,8 +9,60 @@ import traceback
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import google.generativeai as genai
+import portalocker
 
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+
+
+def get_token_usage():
+    """Reads the total token usage from the 'token_usage.txt' file."""
+    token_usage_file = 'token_usage.txt'
+    # Ensure the file exists
+    if not os.path.exists(token_usage_file):
+        with open(token_usage_file, 'w') as f:
+            f.write('0')
+    with portalocker.Lock(token_usage_file, 'r') as f:
+        content = f.read()
+        if content:
+            total_tokens = int(content)
+        else:
+            total_tokens = 0
+    return total_tokens
+
+def update_token_usage(tokens_used):
+    """Updates the total token usage in the 'token_usage.txt' file."""
+    token_usage_file = 'token_usage.txt'
+    threshold = get_token_usage_threshold()
+    # Ensure the file exists
+    if not os.path.exists(token_usage_file):
+        with open(token_usage_file, 'w') as f:
+            f.write('0')
+    with portalocker.Lock(token_usage_file, 'r+') as f:
+        content = f.read()
+        if content:
+            total_tokens = int(content)
+        else:
+            total_tokens = 0
+        total_tokens += tokens_used
+        if total_tokens > threshold:
+            total_tokens = threshold  # Cap the total tokens at the threshold
+        f.seek(0)
+        f.write(str(total_tokens))
+        f.truncate()
+    return total_tokens
+
+def get_token_usage_threshold():
+    config_file = 'config.json'
+    # Ensure the file exists
+    if not os.path.exists(config_file):
+        # Create a default config file
+        default_config = {'token_usage_threshold': 1000000}  # 1 million tokens
+        with open(config_file, 'w') as f:
+            json.dump(default_config, f)
+    with open(config_file, 'r') as f:
+        config = json.load(f)
+    threshold = config.get('token_usage_threshold', 1000000)  # default to 1 million if not specified
+    return threshold
 
 
 
@@ -34,6 +86,14 @@ def transform_messages_for_gemini(messages: List[Dict[str, str]]) -> List[Dict[s
 
 def get_completion(messages: List[Dict[str, str]], model: str) -> str:
     transformed_messages = transform_messages_for_gemini(messages)
+    
+     # Before making the model call, check if the token usage threshold is exceeded
+    total_tokens_used = get_token_usage()
+    threshold = get_token_usage_threshold()
+
+    if total_tokens_used >= threshold:
+        print("Token usage threshold exceeded. Not making model call.")
+        return "Token usage limit reached. Please try again later."
     
     # Set up the model
     generation_config = {
@@ -66,6 +126,23 @@ def get_completion(messages: List[Dict[str, str]], model: str) -> str:
     print("\ncompletion text")
     print(completion_text)
     print("\n")
+    
+     # After the call, get the token usage from response.usage_metadata
+    usage_metadata = response.usage_metadata
+    prompt_tokens = usage_metadata.prompt_token_count
+    completion_tokens = usage_metadata.candidates_token_count
+    total_tokens = usage_metadata.total_token_count
+
+    # Update the total tokens used
+    total_tokens_used = update_token_usage(total_tokens)
+
+   # Log the token usage to a file with timestamps
+    with open('token_usage_log.txt', 'a') as log_file:
+        timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        log_file.write(f"{timestamp} - Used {total_tokens} tokens (prompt: {prompt_tokens}, completion: {completion_tokens}) in this call.\n")
+        log_file.write(f"{timestamp} - Total tokens used so far: {total_tokens_used}\n")
+    
+    
     return completion_text
 
 def escape_for_json(input_string):
@@ -601,6 +678,11 @@ custom_primary_hue = gr.themes.Color(
     c950="#62002F"   # darkest shade
 )
 
+def log_question(question):
+    with open('question_log.txt', 'a', encoding='utf-8') as f:
+        timestamp = datetime.datetime.now().isoformat()
+        f.write(f"{timestamp}\t{question}\n")
+
 
 with gr.Blocks(gr.themes.Soft(primary_hue=custom_primary_hue)) as demo:
     n_shots = gr.Number(value=n_shot, visible=False)
@@ -675,6 +757,8 @@ with gr.Blocks(gr.themes.Soft(primary_hue=custom_primary_hue)) as demo:
             disable_inputs_and_show_spinner, 
             inputs=[], 
             outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button]
+        ).success(
+            log_question, inputs=question_input, outputs=None
         ).success(
             create_query, inputs=question_input, outputs=expanded_query_output
         ).success(
