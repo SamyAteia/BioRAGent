@@ -694,8 +694,11 @@ with gr.Blocks(gr.themes.Soft(primary_hue=custom_primary_hue)) as demo:
         gr.Markdown(
         """
         # BioRAGent!
-        ### A retrieval augmented generation system showcasing generative query expansion and domain-specific RAG for Q&A
+        ### A retrieval-augmented generation (RAG) system showcasing generative query expansion and domain-specific RAG for Q&A  
         For questions, feedback and bug-reports please contact Samy.Ateia@sprachlit.uni-regensburg.de
+        
+        The data used to power this service is the PubMed anual baseline for 2023 downloaded from the National Library of Medicine (NLM)
+        https://pubmed.ncbi.nlm.nih.gov/help/#download-pubmed-data
         """)
         
         gr.Markdown("## Enter your Biomedical Question!")
