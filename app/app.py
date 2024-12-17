@@ -541,11 +541,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 model_name = "gemini-1.5-flash-002"
-model_name_extract = "gemini-1.5-flash-002"
-model_name_rerank = "gemini-1.5-flash-002"
-model_ideal = "gemini-1.5-flash-002"
+model_name_extract = model_name
+model_name_rerank = model_name
+model_ideal = model_name
 n_shot = 3
-use_wiki = True
 
 def read_jsonl_file(file_path: str) -> List[Dict[str, Any]]:
     """Reads a JSONL file and returns a list of examples."""
@@ -759,33 +758,44 @@ with gr.Blocks(gr.themes.Soft(primary_hue=custom_primary_hue)) as demo:
         question_search_button.click(
             disable_inputs_and_show_spinner, 
             inputs=[], 
-            outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button]
+            outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button],
+            concurrency_limit=5
         ).success(
             log_question, inputs=question_input, outputs=None
         ).success(
-            create_query, inputs=question_input, outputs=expanded_query_output
+            create_query, inputs=question_input, outputs=expanded_query_output,
+            concurrency_limit=5
         ).success(
-            search_expanded_query, inputs=[expanded_query_output, question_input], outputs=snippets_result
+            search_expanded_query, inputs=[expanded_query_output, question_input], outputs=snippets_result,
+            concurrency_limit=5
         ).success(
-            generate_ideal_answer_with_citations, inputs=[question_input, snippets_result, n_shots], outputs=answer_with_citations_output
+            generate_ideal_answer_with_citations, inputs=[question_input, snippets_result, n_shots], outputs=answer_with_citations_output,
+            concurrency_limit=5
         ).success(
-            generate_ideal_answer, inputs=[question_input, snippets_result, n_shots], outputs=answer_output
+            generate_ideal_answer, inputs=[question_input, snippets_result, n_shots], outputs=answer_output,
+            concurrency_limit=5
         ).success(
-            enable_inputs_and_hide_spinner, inputs=[], outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button]
+            enable_inputs_and_hide_spinner, inputs=[], outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button],
+            concurrency_limit=5
         )
 
         expanded_query_search_button.click(
             disable_inputs_and_show_spinner, 
             inputs=[], 
-            outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button]
+            outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button],
+            concurrency_limit=5
         ).success(
-            search_expanded_query, inputs=[expanded_query_output, question_input], outputs=snippets_result
+            search_expanded_query, inputs=[expanded_query_output, question_input], outputs=snippets_result,
+            concurrency_limit=5
         ).success(
-            generate_ideal_answer_with_citations, inputs=[question_input, snippets_result, n_shots], outputs=answer_with_citations_output
+            generate_ideal_answer_with_citations, inputs=[question_input, snippets_result, n_shots], outputs=answer_with_citations_output,
+            concurrency_limit=5
         ).success(
-            generate_ideal_answer, inputs=[question_input, snippets_result, n_shots], outputs=answer_output
+            generate_ideal_answer, inputs=[question_input, snippets_result, n_shots], outputs=answer_output,
+            concurrency_limit=5
         ).success(
-            enable_inputs_and_hide_spinner, inputs=[], outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button]
+            enable_inputs_and_hide_spinner, inputs=[], outputs=[loading_spinner, question_input, question_search_button, expanded_query_search_button],
+            concurrency_limit=5
         )
 
 if __name__ == "__main__":

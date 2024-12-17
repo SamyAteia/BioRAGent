@@ -1,6 +1,6 @@
 elasticsearch==7.17.12
 python-dotenv
 google-generativeai
-gradio==5.4
+gradio==5.9
 pandas
 portalocker
