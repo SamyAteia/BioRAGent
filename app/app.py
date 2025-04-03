@@ -540,7 +540,7 @@ from typing import List, Dict, Any
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
-model_name = "gemini-1.5-flash-002"
+model_name = "gemini-2.0-flash"
 model_name_extract = model_name
 model_name_rerank = model_name
 model_ideal = model_name
