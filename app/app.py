@@ -591,7 +591,7 @@ def get_relevant_snippets(examples, n, articles, question: str, model_name: str)
         return article if snippets else None
 
     processed_articles = []
-    with ThreadPoolExecutor(max_workers=6) as executor:
+    with ThreadPoolExecutor(max_workers=10) as executor:
         # Submit all tasks to the thread pool
         futures = [executor.submit(process_article, article) for article in articles]
         
@@ -696,7 +696,7 @@ with gr.Blocks(gr.themes.Soft(primary_hue=custom_primary_hue)) as demo:
         ### A retrieval-augmented generation (RAG) system showcasing generative query expansion and domain-specific RAG for Q&A  
         For questions, feedback and bug-reports please contact Samy.Ateia@sprachlit.uni-regensburg.de
         
-        The data used to power this service is the PubMed anual baseline for 2023 downloaded from the National Library of Medicine (NLM)
+        The data used to power this service is the PubMed anual baseline for 2024 downloaded from the National Library of Medicine (NLM)
         https://pubmed.ncbi.nlm.nih.gov/help/#download-pubmed-data
         """)
         
