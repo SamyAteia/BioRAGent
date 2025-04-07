@@ -694,7 +694,9 @@ with gr.Blocks(gr.themes.Soft(primary_hue=custom_primary_hue)) as demo:
         """
         # BioRAGent!
         ### A retrieval-augmented generation (RAG) system showcasing generative query expansion and domain-specific RAG for Q&A  
-        For questions, feedback and bug-reports please contact Samy.Ateia@sprachlit.uni-regensburg.de
+        For questions, feedback and bug-reports please contact Samy.Ateia@sprachlit.uni-regensburg.de  
+        📄 [Paper](https://arxiv.org/pdf/2412.12358)  
+        💻 [GitHub Repository](https://github.com/SamyAteia/BioRAGent)
         
         The data used to power this service is the PubMed anual baseline for 2024 downloaded from the National Library of Medicine (NLM)
         https://pubmed.ncbi.nlm.nih.gov/help/#download-pubmed-data
