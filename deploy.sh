@@ -3,7 +3,7 @@ set -euo pipefail
 
 DEPLOY_USER="${DEPLOY_USER:-samy}"
 DEPLOY_HOST="${DEPLOY_HOST:-new.samyateia.de}"
-REMOTE_APP_DIR="${REMOTE_APP_DIR:-~/apps/bioragent}"
+REMOTE_APP_DIR="${REMOTE_APP_DIR:-apps/bioragent}"
 BRANCH="${BRANCH:-main}"
 REMOTE="${DEPLOY_USER}@${DEPLOY_HOST}"
 
@@ -14,7 +14,14 @@ echo "Deploying ${BRANCH} to ${REMOTE}:${REMOTE_APP_DIR}"
 ssh "${REMOTE}" "bash -s" <<EOF
 set -euo pipefail
 
-APP_DIR="${REMOTE_APP_DIR}"
+APP_DIR_INPUT="${REMOTE_APP_DIR}"
+if [[ "\${APP_DIR_INPUT}" == "~/"* ]]; then
+  APP_DIR="\$HOME/\${APP_DIR_INPUT#~/}"
+elif [[ "\${APP_DIR_INPUT}" == /* ]]; then
+  APP_DIR="\${APP_DIR_INPUT}"
+else
+  APP_DIR="\$HOME/\${APP_DIR_INPUT}"
+fi
 REPO_DIR="\${APP_DIR}/repo"
 BRANCH="${BRANCH}"
 REPO_URL="${REPO_URL}"
