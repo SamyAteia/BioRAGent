@@ -5,9 +5,13 @@ DEPLOY_USER="${DEPLOY_USER:-samy}"
 DEPLOY_HOST="${DEPLOY_HOST:-new.samyateia.de}"
 REMOTE_APP_DIR="${REMOTE_APP_DIR:-apps/bioragent}"
 BRANCH="${BRANCH:-main}"
+DEPLOY_REPO_URL="${DEPLOY_REPO_URL:-git@github.com:SamyAteia/BioRAGent.git}"
 REMOTE="${DEPLOY_USER}@${DEPLOY_HOST}"
 
-REPO_URL="$(git remote get-url origin)"
+if [[ "${DEPLOY_REPO_URL}" =~ ^https://[^/@]+:[^@]+@ ]]; then
+  echo "DEPLOY_REPO_URL must not contain embedded credentials." >&2
+  exit 1
+fi
 
 echo "Deploying ${BRANCH} to ${REMOTE}:${REMOTE_APP_DIR}"
 
@@ -24,7 +28,7 @@ else
 fi
 REPO_DIR="\${APP_DIR}/repo"
 BRANCH="${BRANCH}"
-REPO_URL="${REPO_URL}"
+REPO_URL="${DEPLOY_REPO_URL}"
 
 mkdir -p "\${APP_DIR}"
 

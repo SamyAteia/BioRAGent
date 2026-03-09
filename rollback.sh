@@ -7,6 +7,11 @@ if [[ -z "${TARGET_SHA}" ]]; then
   exit 1
 fi
 
+if ! [[ "${TARGET_SHA}" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+  echo "Invalid commit SHA format: ${TARGET_SHA}" >&2
+  exit 1
+fi
+
 DEPLOY_USER="${DEPLOY_USER:-samy}"
 DEPLOY_HOST="${DEPLOY_HOST:-new.samyateia.de}"
 REMOTE_APP_DIR="${REMOTE_APP_DIR:-apps/bioragent}"
@@ -37,6 +42,7 @@ fi
 
 cd "\${REPO_DIR}"
 git fetch origin "\${BRANCH}" --prune
+git cat-file -e "\${TARGET_SHA}^{commit}"
 CURRENT_SHA="\$(git rev-parse --short HEAD)"
 git checkout "\${TARGET_SHA}"
 ROLLED_SHA="\$(git rev-parse --short HEAD)"

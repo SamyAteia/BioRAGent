@@ -35,6 +35,8 @@ Optional overrides per run:
 DEPLOY_HOST=example.com DEPLOY_USER=samy BRANCH=main ./deploy.sh
 ```
 
+`DEPLOY_REPO_URL` can override the repository source if needed, but keep it credential-free (no embedded username/password token).
+
 Server requirements:
 
 - `~/apps/bioragent/.env` exists with runtime secrets:
