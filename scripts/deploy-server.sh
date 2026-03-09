@@ -16,6 +16,15 @@ fi
 
 cd "${REPO_DIR}"
 docker compose --env-file "${ENV_FILE}" -f "${COMPOSE_FILE}" up -d --build --remove-orphans
-curl -fsS "${HEALTHCHECK_URL}" > /dev/null
 
-echo "Service deploy completed."
+# Wait for service startup before declaring deploy success.
+for _ in $(seq 1 30); do
+  if curl -fsS "${HEALTHCHECK_URL}" > /dev/null; then
+    echo "Service deploy completed."
+    exit 0
+  fi
+  sleep 2
+done
+
+echo "Healthcheck did not pass at ${HEALTHCHECK_URL}" >&2
+exit 1
