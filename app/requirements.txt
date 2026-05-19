@@ -1,4 +1,4 @@
-elasticsearch==7.17.12
+opensearch-py==2.8.0
 python-dotenv
 google-generativeai
 gradio==5.9

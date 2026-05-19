@@ -2,7 +2,7 @@ from typing import Dict, List
 import re
 import os
 import json
-from elasticsearch import Elasticsearch
+from opensearchpy import OpenSearch
 from dotenv import load_dotenv
 import datetime
 import traceback
@@ -14,9 +14,17 @@ import portalocker
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 
+DATA_DIR = os.getenv("BIORAGENT_DATA_DIR", "/app/data")
+
+
+def data_file_path(filename):
+    os.makedirs(DATA_DIR, exist_ok=True)
+    return os.path.join(DATA_DIR, filename)
+
+
 def get_token_usage():
     """Reads the total token usage from the 'token_usage.txt' file."""
-    token_usage_file = 'token_usage.txt'
+    token_usage_file = data_file_path('token_usage.txt')
     # Ensure the file exists
     if not os.path.exists(token_usage_file):
         with open(token_usage_file, 'w') as f:
@@ -31,7 +39,7 @@ def get_token_usage():
 
 def update_token_usage(tokens_used):
     """Updates the total token usage in the 'token_usage.txt' file."""
-    token_usage_file = 'token_usage.txt'
+    token_usage_file = data_file_path('token_usage.txt')
     threshold = get_token_usage_threshold()
     # Ensure the file exists
     if not os.path.exists(token_usage_file):
@@ -137,7 +145,7 @@ def get_completion(messages: List[Dict[str, str]], model: str) -> str:
     total_tokens_used = update_token_usage(total_tokens)
 
    # Log the token usage to a file with timestamps
-    with open('token_usage_log.txt', 'a') as log_file:
+    with open(data_file_path('token_usage_log.txt'), 'a') as log_file:
         timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         log_file.write(f"{timestamp} - Used {total_tokens} tokens (prompt: {prompt_tokens}, completion: {completion_tokens}) in this call.\n")
         log_file.write(f"{timestamp} - Total tokens used so far: {total_tokens_used}\n")
@@ -157,18 +165,30 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-def run_elasticsearch_query(query, index=["pubmed"]):
-    # Retrieve Elasticsearch details from environment variables
+def run_elasticsearch_query(query, index=None):
+    # Retrieve search backend details from environment variables
     es_host = os.getenv('ELASTICSEARCH_HOST')
     es_user = os.getenv('ELASTICSEARCH_USER')
     es_password = os.getenv('ELASTICSEARCH_PASSWORD')
+    es_index = index or os.getenv('ELASTICSEARCH_INDEX', 'pubmed').strip() or 'pubmed'
 
-    # Connect to Elasticsearch
-    es = Elasticsearch(
-        [es_host],
+    missing_env = [
+        name for name, value in {
+            'ELASTICSEARCH_HOST': es_host,
+            'ELASTICSEARCH_USER': es_user,
+            'ELASTICSEARCH_PASSWORD': es_password,
+        }.items()
+        if not value
+    ]
+    if missing_env:
+        raise RuntimeError(f"Missing required Elasticsearch environment variables: {', '.join(missing_env)}")
+
+    # Connect to OpenSearch
+    es = OpenSearch(
+        [es_host.strip()],
         http_auth=(es_user, es_password),
         verify_certs=False,  # This will ignore SSL certificate validation
-        timeout=120  # Set the timeout to 60 seconds (adjust as needed)
+        timeout=120
     )
 
     # Convert the query string to a dictionary
@@ -181,7 +201,7 @@ def run_elasticsearch_query(query, index=["pubmed"]):
     print(query_dict)
     print("\n")
     # Execute the query
-    response = es.search(query_dict, index=index)
+    response = es.search(index=es_index, body=query_dict)
 
     # Process the response to extract the required information
     results = []
@@ -678,7 +698,7 @@ custom_primary_hue = gr.themes.Color(
 )
 
 def log_question(question):
-    with open('question_log.txt', 'a', encoding='utf-8') as f:
+    with open(data_file_path('question_log.txt'), 'a', encoding='utf-8') as f:
         timestamp = datetime.datetime.now().isoformat()
         f.write(f"{timestamp}\t{question}\n")
 

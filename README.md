@@ -44,4 +44,9 @@ Server requirements:
   - `ELASTICSEARCH_HOST`
   - `ELASTICSEARCH_USER`
   - `ELASTICSEARCH_PASSWORD`
+  - `ELASTICSEARCH_INDEX` (optional, defaults to `pubmed`)
 - server user has Docker permissions.
+
+When the search backend is an OpenSearch node published on the Docker host, set
+`ELASTICSEARCH_HOST` to the Docker host gateway hostname exposed by the
+production compose file, for example `http://host.docker.internal:9200`.

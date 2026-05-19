@@ -6,11 +6,25 @@ services:
       context: ..
       dockerfile: Dockerfile
     restart: unless-stopped
+    user: "10001:10001"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=256m,uid=10001,gid=10001
     environment:
       GEMINI_API_KEY: ${GEMINI_API_KEY}
       ELASTICSEARCH_HOST: ${ELASTICSEARCH_HOST}
       ELASTICSEARCH_USER: ${ELASTICSEARCH_USER}
       ELASTICSEARCH_PASSWORD: ${ELASTICSEARCH_PASSWORD}
+      ELASTICSEARCH_INDEX: ${ELASTICSEARCH_INDEX:-pubmed}
+      BIORAGENT_DATA_DIR: /app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - bioragent-data:/app/data
     ports:
       - "127.0.0.1:7865:7860"
     healthcheck:
@@ -23,3 +37,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
+
+volumes:
+  bioragent-data:
